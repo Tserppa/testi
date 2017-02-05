@@ -1,0 +1,89 @@
+p, body{
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 8pt;
+	margin: 0;
+}
+
+body {
+	margin-bottom: 50px;
+}
+
+ a, a:visited {
+ 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 7pt;
+ color: white;
+ text-decoration: none;
+ }
+ 
+p {
+	padding-left: 5px;
+}
+
+button {
+	height: 25px;
+	background-color: #c8c8c8;
+	width: 100%;
+	border: 0;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 8pt;
+	letter-spacing: 0.8px;
+	cursor: pointer;
+	margin-top: 10px;
+}
+
+button:hover {
+	background-color: #642887;
+	color: white;
+}
+
+button:active {
+	color: #642887;
+}
+
+#header {
+	background-color: #642887;
+	color: #FFFFFF;
+	margin: 0;
+	width: 100%;
+	height: 64px;	
+}
+#header {
+	background-color: #642887;
+	color: #FFFFFF;
+	margin: 0;
+	width: 100%;
+	height: 64px;
+	margin-bottom: 5px;
+}
+
+#headermuuttujat {
+	border-left: 1px solid white;
+	left: 200px;
+	padding-left: 10px;
+	position: absolute;
+	top: 7px;
+}
+
+
+#footer {
+	position: fixed;
+	background-color: #642887;
+	color: #FFFFFF;
+	width: 98%;
+	padding: 1%;
+	text-align: center;
+	letter-spacing: 2px;
+	font-size: 8pt;
+	bottom: 0;
+}
+
+
+#usersettings {
+	position: relative;
+	background-color: ;
+	display: block;
+	left: 10%;
+	width: 80%;
+	height: 100%;
+	overflow: hidden;
+}

@@ -1,0 +1,27 @@
+333 ei toimi
+346 ei toimi
+cbl ei toimi
+333 pätkii
+346 pätkii
+cbl pätkii
+333 on hidas
+346 on hidas
+cbl on hidas
+VeVi-333
+VeVi-346
+VeVi-cbl
+VeVi-IPTV
+VeVi-KTV
+VeVi-muu
+IPTV/TVe pätkii
+IPTV/TVe ei toimi
+IPTV/TVe sisältöong.
+Etätallennusongelma
+Abuse
+Toimitusongelma /-tarkistus
+Laiteviat
+KTV ei toimi
+KTV pätkii
+KTV maksukanavavika
+Palvelun käyttöönotto
+Helpson

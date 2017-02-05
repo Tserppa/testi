@@ -1,0 +1,104 @@
+p, td, tr, body {
+	font-family: "Calibri", Helvetica, Arial, sans-serif;
+	font-size: 8pt;
+}
+
+img {
+	vertical-align: middle;
+}
+
+h2 {
+	margin: 0px;
+}
+
+td {
+	border-bottom: 1px solid #c0c0c0;
+}
+
+table {
+	width: 95%;
+}
+
+td.nounderscore{
+	border-bottom: 0px;
+}
+
+
+tr.otsikko {
+	font-weight: bold;
+	align: center;
+}
+
+mark {
+	background-color: #642887;
+	color: #642887;
+}
+
+mark.red {
+	background-color: red;
+	color: red;
+}
+
+table, input, select {
+	margin-left: 10px;
+}
+
+p {
+	margin-left: 20px;
+}
+
+p.tarkenne {
+	font-size: 8pt;
+	margin: 0px;
+	font-style: italic;
+}
+
+.noselect {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+#vasen_palsta, #kesk_palsta, #oikea_palsta {
+	position: absolute;
+	width: 31%;
+	top: 10px;
+	min-height: 47%;
+	padding: 0px 10px 10px 10px;
+	background-color: white;
+}
+
+#kesk_palsta {
+	top: 8%;
+	left: 33%;
+	height: 80%;
+}
+
+#oikea_palsta {
+	left: 65%;
+	height: 80%;
+	top: 8%;
+}
+
+#testi {
+	position: absolute;
+	top: 61%;
+}
+
+#lisäpalsta{
+	position: absolute;
+	width: 31%;
+	height: 47%;
+	top: 50%;
+}
+
+#header {
+	color: grey;
+	position: absolute;
+	left: 5px;
+	top: 60px;
+	z-index: 1;
+}

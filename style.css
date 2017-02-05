@@ -1,0 +1,388 @@
+p, body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 8pt;
+	margin: 0;
+}
+
+p{
+	padding-left: 10px;
+}
+
+body {
+background-image: url("layout/tausta2.jpg");
+background-repeat: repeat;
+
+}
+
+a, a:visited {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 7pt;
+	color: white;
+	text-decoration: none;
+}
+
+a.musta, a.musta:visited {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 7pt;
+	color: black;
+	text-decoration: none;
+}
+
+h1 {
+	margin-top: 230px;
+	opacity: 1;
+	text-align: center;
+	color: #642887;
+}
+
+h2 {
+	color: #642887;
+
+}
+
+h2.keskitetty {
+	color: #642887;
+	text-align: center;
+}
+
+h3{
+	margin-bottom: 5px;
+}
+
+input[type='number'] {
+	-moz-appearance: textfield;
+}
+
+input[type='text'],input[type='number'] {
+	position: relative;
+	background-color: #e1e1e1;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	letter-spacing: 0.8pt; 
+	color: #642887;
+	width: 90%;
+	height: 30px;
+	border: 1px solid #642887;
+	left: -3px;
+	padding-left: 7px;
+	border-radius: 3px;	
+	margin-bottom: 3px;
+}
+
+input { text-align: center; }
+input:focus { text-align: left }
+
+input[type='text'].lomake{
+	position: relative;
+	background-color: #e1e1e1;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	letter-spacing: 0.8pt; 
+	color: #642887;
+	width: 98%;
+	height: 30px;
+	border: 1px solid #642887;
+	left: -3px;
+	padding-left: 7px;
+	border-radius: 3px;	
+	margin-bottom: 3px;
+}
+
+textarea {
+	position: relative;
+	background-color: #e1e1e1;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	letter-spacing: 0.8pt; 
+	font-size: 7pt;
+	color: #642887;
+	width: 90%;
+	height: 30px;
+	border: 1px solid #642887;
+	padding-left: 7px;
+	border-radius: 3px;	
+	margin-bottom: 3px;
+}
+
+select {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 8pt;
+}
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+}
+
+label.kanava:hover {
+	color: #642887;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+#header {
+	background-color: #642887;
+	color: #FFFFFF;
+	margin: 0;
+	width: 100%;
+	height: 64px;
+}
+
+#headermuuttujat {
+	border-left: 1px solid white;
+	left: 200px;
+	top: 2px;
+	height: 55px;
+	padding-left: 10px;
+	padding-top: 5px;
+	position: absolute;
+}
+
+#tallennus {
+	position: absolute;
+	height: 60px;
+	width: 1px;
+	top: 2px;
+	left: 200px;
+	display: block;
+	background-color: white;
+	animation-name: liuku;
+	animation-duration: 1s;
+}
+
+@keyframes liuku { 100% {
+	left: 95%;
+	background-color: #642887;
+	height: 10px;
+	top: 30px;
+}
+
+}
+img {
+	padding: 5px;
+}
+
+
+
+#footer {
+	position: fixed;
+	background-color: #642887;
+	color: #FFFFFF;
+	width: 98%;
+	padding: 1%;
+	text-align: center;
+	letter-spacing: 2px;
+	font-size: 8pt;
+	bottom: 0;
+}
+
+#channel {
+	position: relative; font-family : "Helvetica Neue", Helvetica, Arial,
+	sans-serif;
+	font-size: 8pt;
+	text-align: center;
+	background-color:;
+	width: 51%;
+	float: left;
+	height: 70px;
+	top: 10px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.channel input[type="radio"] {
+	display: none;
+}
+
+.channel label {
+	display: inline-block;
+	background-color: #e1e1e1;
+	padding: 4px 11px;
+	border-radius: 3px;
+	margin-right: 5px;
+	margin-bottom: 10px;
+}
+
+.channel input[type="radio"]:checked+label {
+	background-color: #642887;	color: white;
+	animation-name: sytytys;
+	animation-duration: 1s;
+}
+
+@keyframes sytytys {
+	0% {	background-color: #e1e1e1;	color: black;}
+	100% {	background-color: #642887;	color: white;}
+}
+#reasons_buttons, #reasons_buttons2, #reasons_buttons3 {
+	position: relative;
+	background-color:;
+	float: left;
+	display: block;
+	width: 51%;
+	height: 100%;
+	top: 40px;
+	text-align: center;
+}
+
+
+#loki {
+	position: relative;
+	display: block;
+	width: 60%;
+	height: 100%;
+	left: 5%;
+}
+
+button {
+	height: 50px;
+	background-color: #642887;
+	color: white;
+	width: 30%;
+	font-size: 8pt;
+	left: 0%;
+	cursor: pointer;
+	margin-top: 6px;
+	margin-right: 6px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	border: 0px;
+	border-radius: 0px;
+	box-shadow: 2px 2px 2px grey;
+}
+
+button:hover {
+	background-color: #642887;
+	color: white;
+	animation-name: hehku;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes hehku{ 50% {
+background-color: orange;
+}
+100% {
+background-color: #642887;
+}
+}
+
+
+button:active {
+	color: #642887;
+}
+
+.reasons_buttons input[type="radio"] {
+	display: none;
+}
+
+#container {
+	position: relative;
+	left: 0px;
+	top: 0px;
+	height: 100%;
+	background-color:;
+}
+
+#sivupalkki {
+	position: relative;
+	height: 700px;
+	width: 370px;
+	background-color: ;
+	overflow: hidden;
+	text-align: center;
+	background-color: #f0f0f0;
+	border-radius: 5px;
+	margin-top: 10px;
+	margin-right: 10px;	
+	border: 1px solid #642887;
+	opacity: 0.85;
+}
+
+#sivupalkkiylä {
+	position: relative;
+	height: 40px;
+	background-color: #dadada;
+	border-bottom: 1px solid #642887;
+	font-weight: bold;
+}
+
+#sivupalkki_lomakkeet, #sivupalkki_suoritteet, #sivupalkki_patkii, #sivupalkki_eikuuluvuutta {
+	border-radius: 5px;
+	margin-top: 10px;
+	margin-left: 5px;
+	height: 500px;
+	text-align: left;
+}
+
+#sivunavi {
+	color: black;
+	font-size: 7pt;
+	letter-spacing: 0.8pt;
+	text-align: center;
+	width: 74px;
+	float: left;
+	line-height: 40px;
+	border-bottom: 1px solid #642887;
+}
+
+#sivunavi:hover {
+	text-align: center;
+	line-height: 40px;
+	height: 40px;
+	background-color: #c2c2c2;
+}
+
+#sivupalkkinavi {
+	position: relative;
+	height: 50px;
+	width: 370px;
+	padding-top: 10px;
+	margin-top: 10px;
+	margin-right: 10px;
+	background-color:;
+	overflow: hidden;
+	text-align: center;
+	background-color: #dadada;
+	border-radius: 5px;
+	animation-name: soini;
+	animation-duration: 1s;
+	border: 1px solid #642887;
+	opacity: 0.8;
+}
+
+#tehot {
+	position: absolute;
+	font-family:sans-serif;
+	left: 10px;
+	top: 3px;
+	color: #642887;
+	font-size: 34pt;
+	font-weight: bold;
+	float: left;
+}
+@keyframes soini {
+	0% {background-color: orange;}
+	100% {background-color: #dadada;}
+}
+
+#pebble {
+	position: absolute;
+	color: black;
+	top: 0px;
+	font-size: 14pt;
+	font-style:italic;
+	line-height: 55px;
+	left: 0px;
+	height: 64px;
+	width: 58px;
+	z-index: 20;
+	animation-name: tallennus;
+	animation-duration: 5s;
+	opacity: 0;
+	border-radius: 5px;
+}
+
+@keyframes tallennus{ 
+	0% {opacity: 1;}
+	100% {opacity: 0; )
+}
+
+#pebble img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

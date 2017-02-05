@@ -1,0 +1,150 @@
+p, body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 8pt;
+	margin: 0;
+	text-align: center;
+}
+
+p {
+	padding-left: 10px;
+}
+
+body {
+	background-image: url("layout/tausta2.jpg");
+	background-repeat: repeat;
+	margin-left: 2%;
+}
+
+input[type='number'] {
+	-moz-appearance: textfield;
+}
+
+input[type='text'], input[type='number'] {
+	position: relative;
+	background-color: #e1e1e1;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	letter-spacing: 0.8pt;
+	font-size: 9pt;
+	color: #642887;
+	width: 98%;
+	height: 20px;
+	border: 1px solid #642887;
+	left: 5px;
+	border-radius: 3px;
+	margin-bottom: 3px;
+}
+
+input[type='text'].lyhyt {
+	width: 20%;
+}
+
+textarea {
+	position: relative;
+	background-color: #e1e1e1;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	letter-spacing: 0.8pt;
+	font-size: 9pt;
+	color: #642887;
+	width: 98%;
+	height: 5em;
+	left: 5px;
+	border: 1px solid #642887;
+	border-radius: 3px;
+	margin-bottom: 3px;
+}
+
+
+textarea.sms {
+	width: 330px;
+left:
+	height:6em;
+}
+
+input[type='text'].sms {
+	width: 330px;
+
+}
+
+select {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 8pt;
+}
+label {
+	display: inline-block;
+	background-color: #e1e1e1;
+	padding: 4px 11px;
+	border-radius: 3px;
+	margin-right: 5px;
+	margin-bottom: 10px;
+}
+
+input[type="radio"]:checked+label {
+	background-color: #642887;	color: white;
+	animation-name: sytytys;
+	animation-duration: 0s;
+}
+
+@keyframes sytytys {
+	0% {	background-color: #e1e1e1;	color: black;}
+	100% {	background-color: #642887;	color: white;}
+}
+input[type="radio"] {
+    display: none;
+}
+
+#lomake{
+	width: 80%;
+}
+
+#tuki{
+	position: absolute;
+	left: 82%;
+	width: 16%;
+	top: 0%;
+}
+
+.koe{
+	margin-bottom: 1px;
+	border-radius: 3px;
+	border: 1px solid #642887;
+	background-color: #e1e1e1;
+}
+
+
+.ohje{
+		padding: 5px;
+	margin-bottom: 1px;
+	border-radius: 3px;
+	border: 1px solid #642887;
+	background-color: white;
+	color: red;
+}
+
+.punainen{
+	color: red;
+}
+
+textarea.toimintaohje {
+	width: 100%;
+	left: 0px;
+	border: 0px;
+	text-align: center;
+	background: none;
+}
+
+textarea.asiakasinfo {
+	width: 100%;
+	left: 0px;
+	border: 0px;
+	text-align: center;
+	background: none;
+}
+#testidivi{
+	position: absolute;
+	left: 81%;
+	width: 18%;
+	margin-bottom: 1px;
+	border-radius: 3px;
+	border: 1px solid #642887;
+	background-color: #e1e1e1;
+}
