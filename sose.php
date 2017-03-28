@@ -18,8 +18,6 @@ if ($_SESSION ['loggedin'] != 1) {
     echo "<a href='index.php'>Kirjaudu sisään</a>";
     exit ();
 }
-// Turn off all error reporting
-error_reporting(0);
 
 $conn = create_mysqli_connection();
 

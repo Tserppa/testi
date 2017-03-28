@@ -18,11 +18,7 @@
 		$pvm = date ( "d.m.y" );
 
 		echo "<a class='header' href='sose.php'>Palaa soseeseen</a>";
-		
-		$servername = "localhost";
-		$mysqlusername = "sose";
-		$password = "mr2eqNW49Z2sffCV";
-		$dbname = "test";
+
 		?>
 
 		</div>
@@ -39,8 +35,8 @@
 	echo '<div id="loki">';
 	
 	echo "<h2>Kappalemäärät</h2>";
-	
-	$conn = new mysqli ( $servername, $mysqlusername, $password, $dbname );
+
+    $conn = create_mysqli_connection();
 	
 	$syyt = "SELECT channel, COUNT(channel) count FROM $area WHERE username LIKE '$nimi' AND pvmtime LIKE '%$pvm%' GROUP BY channel ";
 	$result_info = mysqli_query ( $conn, $syyt );

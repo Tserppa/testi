@@ -19,15 +19,8 @@
 	$area = $_SESSION ["area"];
 	$team = $_SESSION ["team"];
 	$pvm = date ( "d.m.y" );
-	
-	$servername = "localhost";
-	$mysqlusername = "web";
-	$password = "4xPRp5feSNGq4CM3";
-	$dbname = "test";
-	$conn = new mysqli ( $servername, $mysqlusername, $password, $dbname );
-	
-	
-	
+
+    $conn = create_mysqli_connection();
 	?>
 
 
