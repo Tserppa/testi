@@ -18,12 +18,11 @@ if ($_SESSION ['loggedin'] != 1) {
     echo "<a href='index.php'>Kirjaudu sisään</a>";
     exit ();
 }
+// Turn off all error reporting
+error_reporting(0);
 
-$servername = "localhost";
-$mysqlusername = "sose";
-$password = "mr2eqNW49Z2sffCV";
-$dbname = "test";
-$conn = new mysqli ($servername, $mysqlusername, $password, $dbname);
+$conn = create_mysqli_connection();
+
 
 $username = $_SESSION ["username"];
 $name = $_SESSION ["realname"];

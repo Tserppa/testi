@@ -1,14 +1,12 @@
 <?php
+include 'funktiot.php';
+
 session_start ();
 $salasana = $_POST ['password'];
 $useri = $_POST ['username'];
 
-$servername = "localhost";
-$username = "root";
-$password = "teZatr16P";
-$dbname = "test";
+$conn = create_mysqli_connection();
 
-$conn = new mysqli ( $servername, $username, $password, $dbname );
 
 $syyt = "SELECT * FROM users WHERE user LIKE '$useri'";
 $result3 = mysqli_query ( $conn, $syyt );
