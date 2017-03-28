@@ -1,5 +1,6 @@
 <?php
 $versio = "1.4";
+error_reporting(1);
 
 function refresh_page()
 {
@@ -10,24 +11,15 @@ function refresh_page()
 
 function create_mysqli_connection()
 {
-    $starttime = microtime(true);
-    $servername = "localhost";
-    $username = "root";
-    $password = "teZatr16P";
-    $dbname = "silakka";
-    $pvm = date("d.m.y");
+    $config = parse_ini_file('private/config.ini');
+    $connection = mysqli_connect($config['servername'], $config['username'], $config['password'], $config['dbname']);
 
-    // Create connection
-    return new mysqli ($servername, $username, $password, $dbname);
+    return $connection;
 }
 
 function haeb2ctap()
 {
-    $servername = "localhost";
-    $mysqlusername = "sose";
-    $password = "mr2eqNW49Z2sffCV";
-    $dbname = "test";
-    $conn = new mysqli ($servername, $mysqlusername, $password, $dbname);
+    $conn = create_mysqli_connection();
 
     $syyt = "SELECT * FROM reasonit WHERE skill LIKE 'Mob' AND area LIKE 'b2ctap' AND category LIKE 'Verkko'";
     $result3 = mysqli_query($conn, $syyt);
@@ -109,11 +101,8 @@ function haeb2ctap()
 
 function haeb2btap()
 {
-    $servername = "localhost";
-    $mysqlusername = "sose";
-    $password = "mr2eqNW49Z2sffCV";
-    $dbname = "test";
-    $conn = new mysqli ($servername, $mysqlusername, $password, $dbname);
+    $conn = create_mysqli_connection();
+
 
     $syyt = "SELECT * FROM reasonit WHERE skill LIKE 'Mob' AND area LIKE 'b2btap' AND category LIKE 'Verkko'";
     $result3 = mysqli_query($conn, $syyt);
@@ -235,11 +224,8 @@ function haeb2btap()
 
 function haetekno()
 {
-    $servername = "localhost";
-    $mysqlusername = "sose";
-    $password = "mr2eqNW49Z2sffCV";
-    $dbname = "test";
-    $conn = new mysqli ($servername, $mysqlusername, $password, $dbname);
+    $conn = create_mysqli_connection();
+
 
     $syyt = "SELECT * FROM reasonit WHERE skill LIKE 'teknoskilli' AND area LIKE 'tekno' AND category LIKE 'tekno'";
     $result3 = mysqli_query($conn, $syyt);
@@ -257,13 +243,10 @@ function haetekno()
 
 function haeSuoritteet($area, $username)
 {
-    $servername = "localhost";
-    $mysqlusername = "sose";
-    $password = "mr2eqNW49Z2sffCV";
-    $dbname = "test";
+    $conn = create_mysqli_connection();
+
     $pvm = date("Y-m-d");
 
-    $conn = new mysqli ($servername, $mysqlusername, $password, $dbname);
 
     $syyt = "SELECT channel, count(id) count FROM $area WHERE username LIKE '$username' AND pvmtime LIKE '%$pvm%' GROUP BY channel ";
     $result3 = mysqli_query($conn, $syyt);
@@ -291,12 +274,8 @@ function drawFooter()
 
 function checkLastChannel($username)
 {
-    $servername = "localhost";
-    $mysqlusername = "sose";
-    $password = "mr2eqNW49Z2sffCV";
-    $dbname = "test";
+    $conn = create_mysqli_connection();
 
-    $conn = new mysqli ($servername, $mysqlusername, $password, $dbname);
 
     $syyt = "SELECT channel FROM b2btap WHERE username LIKE '$username' ORDER BY ID DESC LIMIT 1 ";
     $result3 = mysqli_query($conn, $syyt);
@@ -312,12 +291,9 @@ function checkLastChannel($username)
 
 function checkLastTech($username, $area)
 {
-    $servername = "localhost";
-    $mysqlusername = "sose";
-    $password = "mr2eqNW49Z2sffCV";
-    $dbname = "test";
+    $conn = create_mysqli_connection();
+
     $lastTech = 'Mob';
-    $conn = new mysqli ($servername, $mysqlusername, $password, $dbname);
 
     $syyt = "SELECT technique FROM $area WHERE username LIKE '$username' ORDER BY ID DESC LIMIT 1 ";
 
