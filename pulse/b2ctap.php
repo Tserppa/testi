@@ -19,7 +19,7 @@ $servername = "localhost";
 $username = "root";
 $password = "teZatr16P";
 $dbname = "test";
-$pvm = date ( "d.m.y" );
+$pvm = date ( "Y-m-d" );
 
 // Create connection
 $conn = new mysqli ( $servername, $username, $password, $dbname );
@@ -31,7 +31,7 @@ if ($conn->connect_error) {
 
 echo "<div id='header'><table>";
 $luku = 0;
-$reason_l1t = "SELECT channel, count(id) count FROM b2ctap WHERE pvm LIKE '$pvm' GROUP BY channel";
+$reason_l1t = "SELECT channel, count(id) count FROM b2ctap WHERE pvmtime LIKE '$pvm%' GROUP BY channel";
 $result3 = mysqli_query ( $conn, $reason_l1t );
 if ($result3->num_rows > 0) {
 	while ( $row = $result3->fetch_assoc () ) {
@@ -56,9 +56,9 @@ if ($result3->num_rows > 0) {
 	echo "<table><tr class='otsikko'><td></td><td>Klo</td><td>Syy</td><td>Tarkenne</td></tr>";
 	while ( $row = $result3->fetch_assoc () ) {
 		if ($row ["channel"] == 'Sähköposti') {
-			echo "<tr><td align='center'><img src='../layout/envelope.jpg'></td><td>" . $row ["klo"] . "</td><td>" . $row ["reason_l1"] . "</td><td>" . $row ["reason_l2"] . "</td></tr>";
+			echo "<tr><td align='center'><img src='../layout/envelope.jpg'></td><td>" . $row ["pvmtime"] . "</td><td>" . $row ["reason_l1"] . "</td><td>" . $row ["reason_l2"] . "</td></tr>";
 		} else if ($row ["channel"] == 'Puhelu') {
-			echo "<tr><td align='center'><img src='../layout/phone.png'></td><td>" . $row ["klo"] . "</td><td>" . $row ["reason_l1"] . "</td><td>" . $row ["reason_l2"] . "</td></tr>";
+			echo "<tr><td align='center'><img src='../layout/phone.png'></td><td>" . $row ["pvmtime"] . "</td><td>" . $row ["reason_l1"] . "</td><td>" . $row ["reason_l2"] . "</td></tr>";
 		}
 	}
 	echo "</table>";
@@ -67,18 +67,18 @@ echo "</p>";
 
 
 
-$reason_l1t = "SELECT * FROM b2ctap WHERE pvm LIKE '$pvm' AND address NOT LIKE '' ORDER BY address ASC";
+$reason_l1t = "SELECT * FROM b2ctap WHERE pvmtime LIKE '$pvm%' AND address NOT LIKE '' ORDER BY address ASC";
 
 $result_notice = mysqli_query ( $conn, $reason_l1t );
 
 echo "<h2>Paikkatietokirjaukset</h2>";
 echo "<p class='tarkenne'>Viimeiset 30kpl - puhelut</p>";
 
-echo "<table><tr class='otsikko'><td>Pvm</td><td>Klo</td><td>Syy</td><td>Postinro</td><td>Tukiasema</td><td>Kirjaaja</td></tr>";
+echo "<table><tr class='otsikko'><td>Klo</td><td>Syy</td><td>Postinro</td><td>Tukiasema</td><td>Kirjaaja</td></tr>";
 echo "<p>";
 if ($result_notice->num_rows > 0) {
 	while ( $row = $result_notice->fetch_assoc () ) {
-		echo "<tr><td>" .$row ["pvm"] . "</td><td>" . $row ["klo"] . "</td><td>" . $row ["reason_l1"] . "</td><td><a href='http://www.google.fi/maps/place/$row[address]'>" . $row ["address"] . "</td><td>" . $row ["basestation_info"] . "</td><td>" . $row ["name"] . "</td></tr>";
+		echo "<tr><td>" . $row ["pvmtime"] . "</td><td>" . $row ["reason_l1"] . "</td><td><a href='http://www.google.fi/maps/place/$row[address]'>" . $row ["address"] . "</td><td>" . $row ["basestation_info"] . "</td><td>" . $row ["name"] . "</td></tr>";
 	}
 } else
 	echo "Ei dataa";
@@ -89,7 +89,7 @@ echo "</div><br>";
 
 
 	?>
-		
+
 <script type="text/javascript"
 	src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
@@ -106,7 +106,7 @@ echo "</div><br>";
 
 <?php
 
-$reason_l1t = "SELECT reason_l1,channel,technique,COUNT(*) as count FROM b2ctap WHERE pvm LIKE '$pvm' AND technique LIKE 'Mob' GROUP BY reason_l1 ORDER BY count DESC LIMIT 20";
+$reason_l1t = "SELECT reason_l1,channel,technique,COUNT(*) as count FROM b2ctap WHERE pvmtime LIKE '$pvm%' AND technique LIKE 'Mob' GROUP BY reason_l1 ORDER BY count DESC LIMIT 12";
 $result3 = mysqli_query ( $conn, $reason_l1t );
 if ($result3->num_rows > 0) {
 
@@ -118,16 +118,16 @@ if ($result3->num_rows > 0) {
 ?>
         ]);
         var view = new google.visualization.DataView(data3);
-      
+
         var options3 = {
           chart: {
-              
+
               'chartArea': {'width': '100%', 'height': '100%'},
-                  
+
           },
           colors: ['#642887'],
           legend: { position: "none" },
-          
+
           hAxis: {
             title: '',
             minValue: 0,
@@ -142,14 +142,14 @@ if ($result3->num_rows > 0) {
               }
             },
             bar: { groupWidth: "90%" }
-              
+
         };
         var material = new google.charts.Bar(document.getElementById('lisäpalsta'));
         material.draw(data3, options3);
       }
 
 
-    
+
     function drawMaterial() {
           var data2 = google.visualization.arrayToDataTable([
 
@@ -157,7 +157,7 @@ if ($result3->num_rows > 0) {
 
 <?php
 
-$reason_l1t = "SELECT reason_l1,channel,technique,COUNT(*) as count FROM b2ctap WHERE pvm LIKE '$pvm' AND technique LIKE 'BB' GROUP BY reason_l1 ORDER BY count DESC LIMIT 20";
+$reason_l1t = "SELECT reason_l1,channel,technique,COUNT(*) as count FROM b2ctap WHERE pvmtime LIKE '$pvm%' AND technique LIKE 'BB' GROUP BY reason_l1 ORDER BY count DESC LIMIT 12";
 $result3 = mysqli_query ( $conn, $reason_l1t );
 if ($result3->num_rows > 0) {
 
@@ -169,17 +169,17 @@ if ($result3->num_rows > 0) {
 ?>
           ]);
           var view = new google.visualization.DataView(data2);
-        
+
           var options2 = {
             chart: {
                 title: "Soitonsyyt kappalemäärittäin",
-             
+
                 'chartArea': {'width': '100%', 'height': '100%'},
-                    
+
             },
             colors: ['#642887'],
             legend: { position: "none" },
-            
+
             hAxis: {
               title: '',
               minValue: 0,
@@ -194,13 +194,13 @@ if ($result3->num_rows > 0) {
                 }
               },
               bar: { groupWidth: "90%" }
-                
+
           };
           var material = new google.charts.Bar(document.getElementById('vasen_palsta'));
           material.draw(data2, options2);
         }
 
-    
+
 function drawMap () {
 	  var data = new google.visualization.DataTable();
 	  data.addColumn('string');
@@ -208,7 +208,7 @@ function drawMap () {
 	  data.addRows([
 <?php
 
-	    $reason_l1t = "SELECT * FROM b2ctap WHERE address NOT LIKE '' AND pvm LIKE '$pvm'";
+	    $reason_l1t = "SELECT * FROM b2ctap WHERE address NOT LIKE '' AND pvmtime LIKE '%$pvm%'";
 
 	    $result3 = mysqli_query ( $conn, $reason_l1t );
 	    

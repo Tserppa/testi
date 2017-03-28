@@ -28,7 +28,7 @@ if ($result3->num_rows > 0) {
 			$_SESSION ['default_skill'] = $row['default_skill'];
 			
 			echo "Voit sulkea tämän ikkunan";
-			echo '<script>window.open("sose.php","winname","directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=no,width=800,height=960");</script>';
+			echo '<script>window.open("sose.php","winname","directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=no,width=1000,height=960");</script>';
 		} else {
 	echo "Väärä salasana";
 	$_SESSION['username'] = '';

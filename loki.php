@@ -8,33 +8,29 @@
 </head>
 <body>
 	<div id="header">
-		<!--<img alt="logo" src="layout/sonera_logo.png" height="51px"
-			width="180px" />-->
+        <!--<img alt="logo" src="layout/sonera_logo.png" height="51px"
+            width="180px" />-->
 		<div id="headermuuttujat">
 		<?php
 		session_start ();
 		$nimi = $_SESSION ["username"];
 		$area = $_SESSION ['area'];
 		$pvm = date ( "d.m.y" );
-		
+
 		echo "<a class='header' href='sose.php'>Palaa soseeseen</a>";
 		
 		$servername = "localhost";
-		$mysqlusername = "root";
-		$password = "teZatr16P";
+		$mysqlusername = "sose";
+		$password = "mr2eqNW49Z2sffCV";
 		$dbname = "test";
 		?>
 
 		</div>
 	</div>
-	
-	
-
-	
 	<?php
 	
 	$starttime = microtime ( true );
-	$pvm = date ( "d.m.y" );
+	$pvm = date ( "Y-m-d" );
 	
 	// Check connection
 	if ($conn->connect_error) {
@@ -46,7 +42,7 @@
 	
 	$conn = new mysqli ( $servername, $mysqlusername, $password, $dbname );
 	
-	$syyt = "SELECT channel, COUNT(channel) count FROM $area WHERE username LIKE '$nimi' AND pvm LIKE '$pvm' GROUP BY channel ";
+	$syyt = "SELECT channel, COUNT(channel) count FROM $area WHERE username LIKE '$nimi' AND pvmtime LIKE '%$pvm%' GROUP BY channel ";
 	$result_info = mysqli_query ( $conn, $syyt );
 	while ( $row = $result_info->fetch_assoc () ) {
 		$suoritteet3 .= "<tr><td>" . $row ["channel"] . "</td><td>" . $row ["count"] . "</td></tr>";
@@ -55,14 +51,14 @@
 	echo "<p><table>" . $suoritteet3 . "</table></p>";
 	echo "<h2>Tämän päivän kirjaukseni</h2>";
 	
-	$syyt = "SELECT * FROM $area WHERE username LIKE '$nimi' AND pvm LIKE '$pvm' ORDER BY id DESC";
+	$syyt = "SELECT * FROM $area WHERE username LIKE '$nimi' AND pvmtime LIKE '%$pvm%' ORDER BY id DESC";
 	
 	$result3 = mysqli_query ( $conn, $syyt );
 	if ($result3->num_rows > 0) {
 		// output data of each row
 		echo "<table><tr><td>Poisto</td><td>pvm</td><td>klo</td><td>kanava</td><td>syy</td><td>syy2</td><td>info</td></tr>";
 		while ( $row = $result3->fetch_assoc () ) {
-			echo "<tr><td><a href='delete_specific_row.php?id=" . $row ["id"] . "'><font color='red'>Poista</font></a></td><td>" . $row ["pvm"] . "</td><td>" . $row ["klo"] . "</td><td>" . $row ["channel"] . "</td><td>" . $row ["reason_l1"] . "</td><td>" . $row ["reason_l2"] . "</td><td>" . $row ["notice"] . "</td></tr>";
+			echo "<tr><td><a href='delete_specific_row.php?id=" . $row ["id"] . "'><font color='red'>Poista</font></a></td><td>" . $row ["pvmtime"] . "</td><td>" . $row ["channel"] . "</td><td>" . $row ["reason_l1"] . "</td><td>" . $row ["reason_l2"] . "</td><td>" . $row ["notice"] . "</td></tr>";
 		}
 		echo "</table>";
 	} else {
@@ -74,12 +70,7 @@ drawFooter();
 	?>
 	
 		<?php
-$servername = "localhost";
-$mysqlusername = "root";
-$password = "teZatr16P";
-$dbname = "test";
-$conn = new mysqli ( $servername, $mysqlusername, $password, $dbname );
-
+/*
 $syyt = "SELECT technique, count(id) count FROM $area WHERE pvm LIKE '$pvm' GROUP BY technique";
 $result3 = mysqli_query ( $conn, $syyt );
 
@@ -115,6 +106,7 @@ if ($result3->num_rows > 0) {
 		echo "['$row[technique]', $row[count] ],";
 	}
 }
+
 ?> 
 			       		]);
 
@@ -134,6 +126,8 @@ if ($result3->num_rows > 0) {
         chart.draw(data, options);
       }
     </script>
-    
+<?php
+*/
+?>
 </body>
 </html>

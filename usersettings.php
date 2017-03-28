@@ -27,8 +27,8 @@
 </head>
 <body>
 	<div id="header">
-		<img alt="logo" src="layout/sonera_logo.png" height="51px"
-			width="180px" />
+        <img alt="logo" class="logo" src="layout/telia_logo.png" height="55px" width="55px" />
+		<img alt="logo" class="logo" src="layout/teliasose.png" height="55px" width="110px" />
 		<div id="headermuuttujat">
 			<a href="sose.php">Palaa soseeseen</a>
 		</div>

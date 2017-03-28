@@ -18,7 +18,6 @@ $_SESSION ['username'] = '1';
 <meta charset="UTF-8">
 <title>SoSe | <?php echo $versio;?>.</title>
 <LINK href="stylelogin.css" rel="stylesheet" type="text/css">
-<link rel="icon" type="image/x-icon" href="favicon.ico" />
 </head>
 <body>
 	<h1>Kirjaudu soitonsyyseurantaan:</h1>
@@ -44,3 +43,4 @@ $_SESSION ['username'] = '1';
 	</section>
 </body>
 </head>
+</html>

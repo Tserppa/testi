@@ -6,6 +6,8 @@ p, body{
 
 body {
 	margin-bottom: 50px;
+    background: url("layout/pebbletausta.png") repeat;
+
 }
 
  a, a:visited {
@@ -32,23 +34,23 @@ button {
 }
 
 button:hover {
-	background-color: #642887;
+	background-color: #990AE3;
 	color: white;
 }
 
 button:active {
-	color: #642887;
+	color: #990AE3;
 }
 
 #header {
-	background-color: #642887;
+	background-color: #990AE3;
 	color: #FFFFFF;
 	margin: 0;
 	width: 100%;
 	height: 64px;	
 }
 #header {
-	background-color: #642887;
+	background-color: #990AE3;
 	color: #FFFFFF;
 	margin: 0;
 	width: 100%;
@@ -67,7 +69,7 @@ button:active {
 
 #footer {
 	position: fixed;
-	background-color: #642887;
+	background-color: #990AE3;
 	color: #FFFFFF;
 	width: 98%;
 	padding: 1%;
@@ -86,4 +88,8 @@ button:active {
 	width: 80%;
 	height: 100%;
 	overflow: hidden;
+}
+
+.logo {
+	padding: 5px 0 0 5px;
 }

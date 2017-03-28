@@ -12,15 +12,13 @@
 
 <script>
     window.onunload = refreshParent;
-    function refreshParent() {
-        window.opener.location.reload();
-    }
+
     
 </script>
 <?php
 session_start ();
 $liittymanumero = $_GET['ltunnus'];
-$vastaanottaja = $_GET['yhtnro'];
+$vastaanottaja = str_replace("-","", $_GET['yhtnro']);
 
 ?>
 <h3>Lähetä SMS-optio:</h3>

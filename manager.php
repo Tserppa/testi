@@ -19,7 +19,7 @@ $servername = "localhost";
 $username = "root";
 $password = "teZatr16P";
 $dbname = "test";
-$pvm = date ( "d.m.y" );
+$pvm = date ( "Y-m-d" );
 
 // Create connection
 $conn = new mysqli ( $servername, $username, $password, $dbname );
@@ -35,7 +35,7 @@ echo "</div>";
 echo "<div id='vasen_palsta'><h2>Kirjausten määrä tiimeittäin tänään </h2>";
 echo "<p class='tarkenne'></p><br>";
 
-$syyt = "SELECT *, COUNT(*) as count FROM b2ctap JOIN users ON users.user = b2ctap.username WHERE b2ctap.pvm  LIKE '$pvm' AND b2ctap.channel LIKE 'Puhelu' GROUP BY b2ctap.name, b2ctap.channel ORDER BY team, count DESC";
+$syyt = "SELECT *, COUNT(*) as count FROM b2ctap JOIN users ON users.user = b2ctap.username WHERE b2ctap.pvmtime  LIKE '%$pvm%' AND b2ctap.channel LIKE 'Puhelu' GROUP BY b2ctap.name, b2ctap.channel ORDER BY team, count DESC";
 $result3 = mysqli_query ( $conn, $syyt );
 if ($result3->num_rows > 0) {
 	
@@ -45,7 +45,8 @@ if ($result3->num_rows > 0) {
 		echo "<tr><td>" . $row ["team"] . "</td><td>" . $row ["user"] . "</td><td>" . $row ["name"] . "</td><td>" . $row ["count"] . "</td>";
 		$total += $row ["count"];
 		
-		$syyt3 = "SELECT *, COUNT(*) as count FROM b2ctap JOIN users ON users.user = b2ctap.username WHERE b2ctap.pvm LIKE '$pvm'  AND b2ctap.channel LIKE 'Sähköposti' AND b2ctap.username LIKE '$row[user]' GROUP BY b2ctap.name, b2ctap.channel ORDER BY team,b2ctap.name,count DESC";
+		$syyt3 = "SELECT *, COUNT(*) as count FROM b2ctap JOIN users ON users.user = b2ctap.username WHERE b2ctap.pvmtime LIKE '%$pvm%'  AND b2ctap.channel LIKE 'Sähköposti' AND b2ctap.username LIKE '$row[user]' GROUP BY b2ctap.name, b2ctap.channel 
+ORDER BY team,b2ctap.name,count DESC";
 		$result4 = mysqli_query ( $conn, $syyt3 );
 		$row = $result4->fetch_assoc ();
 		echo "<td>" . $row ["count"] . "</td>";
@@ -63,7 +64,7 @@ echo "</table>";
 	<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
 	<script>
   $( function() {
-    $( "#datepicker" ).datepicker({ dateFormat: 'dd.mm.y' });
+    $( "#datepicker" ).datepicker({ dateFormat: 'yy-mm-dd' });
   } );
   </script>
 
@@ -87,7 +88,7 @@ echo "</table>";
 					$input_date = $_POST ['pvm'];
 					$input_tiimi = $_POST ['tiimi'];
 					
-					$syyt = "SELECT *, COUNT(*) as count FROM b2ctap JOIN users ON users.user = b2ctap.username WHERE b2ctap.pvm  LIKE '$input_date' AND users.team LIKE '$input_tiimi' AND b2ctap.channel LIKE 'Puhelu' GROUP BY b2ctap.name, b2ctap.channel ORDER BY count DESC";
+					$syyt = "SELECT *, COUNT(*) as count FROM b2ctap JOIN users ON users.user = b2ctap.username WHERE b2ctap.pvmtime  LIKE '%$input_date%' AND users.team LIKE '$input_tiimi' AND b2ctap.channel LIKE 'Puhelu' GROUP BY b2ctap.name, b2ctap.channel ORDER BY count DESC";
 					$result3 = mysqli_query ( $conn, $syyt );
 					if ($result3->num_rows > 0) {
 						
@@ -100,7 +101,7 @@ echo "</table>";
 							echo "<tr><td>" . $row ["team"] . "</td><td>" . $row ["user"] . "</td><td>" . $row ["name"] . "</td><td>" . $row ["count"] . "</td>";
 							$total += $row ["count"];
 							
-							$syyt3 = "SELECT *, COUNT(*) as count FROM b2ctap JOIN users ON users.user = b2ctap.username WHERE b2ctap.pvm LIKE '$input_date' AND users.team LIKE '$input_tiimi' AND b2ctap.channel LIKE 'Sähköposti' AND b2ctap.username LIKE '$row[user]' GROUP BY b2ctap.name, b2ctap.channel ORDER BY team,b2ctap.name,count DESC";
+							$syyt3 = "SELECT *, COUNT(*) as count FROM b2ctap JOIN users ON users.user = b2ctap.username WHERE b2ctap.pvmtime LIKE '%$input_date%' AND users.team LIKE '$input_tiimi' AND b2ctap.channel LIKE 'Sähköposti' AND b2ctap.username LIKE '$row[user]' GROUP BY b2ctap.name, b2ctap.channel ORDER BY team,b2ctap.name,count DESC";
 							$result4 = mysqli_query ( $conn, $syyt3 );
 							$row = $result4->fetch_assoc ();
 							echo "<td>" . $row ["count"] . "</td>";

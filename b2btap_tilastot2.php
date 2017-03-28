@@ -18,7 +18,7 @@ $servername = "localhost";
 $username = "root";
 $password = "teZatr16P";
 $dbname = "test";
-$pvm = date ( "d.m.y" );
+$pvm = date ( "Y-m-d" );
 
 // Create connection
 $conn = new mysqli ( $servername, $username, $password, $dbname );
@@ -41,16 +41,16 @@ if ($result3->num_rows > 0) {
 	echo "<table><tr class='otsikko'><td></td><td>Klo</td><td>Syy</td><td>Tarkenne</td></tr>";
 	while ( $row = $result3->fetch_assoc () ) {
 		if ($row ["channel"] == 'Tausta') {
-			echo "<tr><td align='center'><img src='layout/envelope.jpg'></td><td>" . $row ["klo"] . "</td><td>" . $row ["reason_l1"] . "</td><td>" . $row ["reason_l2"] . "</td></tr>";
+			echo "<tr><td align='center'><img src='layout/envelope.jpg'></td><td>" . $row ["pvmtime"] . "</td><td>" . $row ["reason_l1"] . "</td><td>" . $row ["reason_l2"] . "</td></tr>";
 		} else if ($row ["channel"] == 'Puhelu') {
-			echo "<tr><td align='center'><img src='layout/phone.png'></td><td>" . $row ["klo"] . "</td><td>" . $row ["reason_l1"] . "</td><td>" . $row ["reason_l2"] . "</td></tr>";
+			echo "<tr><td align='center'><img src='layout/phone.png'></td><td>" . $row ["pvmtime"] . "</td><td>" . $row ["reason_l1"] . "</td><td>" . $row ["reason_l2"] . "</td></tr>";
 		}
 	}
 	echo "</table>";
 }
 echo "</p>";
 
-$noticehaku = "SELECT reason_l1, notice, address, channel FROM b2btap WHERE pvm LIKE '$pvm' and notice NOT LIKE '' ORDER BY id DESC LIMIT 10";
+$noticehaku = "SELECT reason_l1, notice, address, channel FROM b2btap WHERE pvmtime LIKE '%$pvm%' and notice NOT LIKE '' ORDER BY id DESC LIMIT 10";
 $result_notice = mysqli_query ( $conn, $noticehaku );
 
 echo "<h2>Lisätietokirjaukset</h2>";
@@ -72,7 +72,7 @@ echo "</p>";
 echo "</table><br><br>";
 
 
-$reason_l1t = "SELECT * FROM b2btap WHERE pvm LIKE '$pvm' AND address NOT LIKE '' ORDER BY address ASC";
+$reason_l1t = "SELECT * FROM b2btap WHERE pvmtime LIKE '%$pvm%' AND address NOT LIKE '' ORDER BY address ASC";
 
 $result_notice = mysqli_query ( $conn, $reason_l1t );
 
@@ -83,7 +83,8 @@ echo "<table><tr class='otsikko'><td>Pvm</td><td>Klo</td><td>Syy</td><td>Postinr
 echo "<p>";
 if ($result_notice->num_rows > 0) {
 	while ( $row = $result_notice->fetch_assoc () ) {
-		echo "<tr><td>" .$row ["pvm"] . "</td><td>" . $row ["klo"] . "</td><td>" . $row ["reason_l1"] . "</td><td><a href='http://www.google.fi/maps/place/$row[address]'>" . $row ["address"] . "</td><td>" . $row ["basestation_info"] . "</td><td>" . $row ["name"] . "</td></tr>";
+		echo "<tr><td>" .$row ["pvmtime"] . "</td><td>" . $row ["pvmtime"] . "</td><td>" . $row ["reason_l1"] . "</td><td><a href='http://www.google.fi/maps/place/$row[address]'>" . $row ["address"] . "</td><td>" . $row ["basestation_info"] .
+            "</td><td>" . $row ["name"] . "</td></tr>";
 	}
 } else
 	echo "Ei dataa";
@@ -96,7 +97,7 @@ echo "<div id='oikea_palsta'>";
 
 echo "</div>";
 
-$reason_l1t = "SELECT reason_l1 ,channel,technique,COUNT(*) as count FROM b2btap WHERE pvm LIKE '$pvm' GROUP BY reason_l1 ORDER BY count DESC LIMIT 20";
+$reason_l1t = "SELECT reason_l1 ,channel,technique,COUNT(*) as count FROM b2btap WHERE pvmtime LIKE '%$pvm%' GROUP BY reason_l1 ORDER BY count DESC LIMIT 20";
 $result3 = mysqli_query ( $conn, $reason_l1t );
 if ($result3->num_rows > 0) {
 	 
@@ -162,7 +163,7 @@ function drawMap () {
 	  data.addRows([
 <?php
 
-	    $reason_l1t = "SELECT * FROM b2btap WHERE address NOT LIKE '' AND pvm LIKE '$pvm'";
+	    $reason_l1t = "SELECT * FROM b2btap WHERE address NOT LIKE '' AND pvmtime LIKE '%$pvm%'";
 	    
 	    $result3 = mysqli_query ( $conn, $reason_l1t );
 	    
