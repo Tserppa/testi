@@ -126,7 +126,6 @@ if ($reason_l2 == 'Ei toimi' && $_SESSION ["reason_l1"] == 'ADSL') {
         if ($reason_l1 != '') {
             echo "<div id='pebble'><img src='layout/PebbleLoader.gif' height='55px' width='55px'></div>";
 
-            $conn = new mysqli ($servername, $mysqlusername, $password, $dbname);
             $sql = "INSERT INTO $area (pvmtime, username, name, technique, channel, address, basestation_info, notice, reason_l1, reason_l2, reason_l3) VALUES('$stamp', '$username', '$name', '$tech', '$channel', '$address', 
 '$basestation_info', '$notice', '$reason_l1', '$reason_l2', '$reason_l3')";
             if ($conn->query($sql) === TRUE) {
@@ -141,7 +140,6 @@ if ($reason_l2 == 'Ei toimi' && $_SESSION ["reason_l1"] == 'ADSL') {
         if ($_SESSION ["reason_l2"] != '' && $paluu != 1) {
             echo "<div id='pebble'><img src='layout/PebbleLoader.gif' height='55px' width='55px'></div>";
 
-            $conn = new mysqli ($servername, $mysqlusername, $password, $dbname);
             $sql = "INSERT INTO $area (pvmtime, username, name, technique, channel, address, basestation_info, notice, reason_l1, reason_l2, reason_l3) VALUES('$stamp', '$username', '$name', '$tech', '$channel', '$address', 
 '$basestation_info', '$notice', '$_SESSION[reason_l1]', '$reason_l2', '$reason_l3')";
             if ($conn->query($sql) === TRUE) {
