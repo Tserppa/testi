@@ -21,14 +21,12 @@
     <div id="valo" class="koe" hidden>
         <h3>DSL/Broadband-valon status modeemissa, vian ollessa päällä?</h3>
         <select id="valostatus" name="valostatus" title="valostatus">
-            <option value=""></option>
-            <option value=" Valo palaa">Valo palaa</option>
-            <option value=" Valo ei pala">Valo ei pala</option>
-            <option value=" Vilkkuu">Vilkkuu</option>
-            <option value=" Ei tiedossa">Ei tiedossa</option>
+            <option value="Valo palaa">Valo palaa</option>
+            <option value="Valo ei pala">Valo ei pala</option>
+            <option value="Vilkkuu">Vilkkuu</option>
+            <option value="Ei tiedossa">Ei tiedossa</option>
         </select>
         <select id="merkki" name="merkki" title="merkki">
-            <option value=""></option>
             <option value="Zyxel">Zyxel</option>
             <option value="Telewell">Telewell</option>
             <option value="A-link">A-link</option>
@@ -39,7 +37,11 @@
         <input type="text" class="lyhyt" id="malli" name="malli" placeholder="Modeemin malli">
     </div>
     <div id="toinen_modeemi3" class="koe" hidden>
-        <div id="testidivi">Huom<br>Suorittakaa modeemille tehdasasetusten palautus painamalla laitteen reset-painiketta HUOM! Resetointi palauttaa laitteeseen oletusarvot myös langattoman yhteyden osalta
+        <div id="testidivi">
+            <svg class="huomautus" height="40px" width="40px" fill="black">
+                <use xlink:href='../layout/svg.svg#speech-bubble'/>
+            </svg>
+            Suorittakaa modeemille tehdasasetusten palautus painamalla laitteen reset-painiketta HUOM! Resetointi palauttaa laitteeseen oletusarvot myös langattoman yhteyden osalta<br>
         </div>
         <h3>Onko testattu toisella modeemilla ja tietokoneella?</h3>
         <input type='radio' onclick='modeemi3_1();' id='modeemi3_11' name='modeemi3' value='Testattu toisella modeemilla omassa liittymässä'><label for='modeemi3_11'>Testattu
@@ -58,7 +60,11 @@
             huonosti asiakkaan mielestä</label>
     </div>
     <div id="takuulaite" class="koe" hidden>
-        <div id="testidivi">Huom</br>Pyydä asiakasta palauttamaan tehdasasetukset toimimattomaan modeemiin, jos sitä ei ole vielä tehty
+        <div id="testidivi">
+            <svg class="huomautus"  height="40px" width="40px" fill="black">
+                <use xlink:href='../layout/svg.svg#speech-bubble'/>
+            </svg>
+            Pyydä asiakasta palauttamaan tehdasasetukset toimimattomaan modeemiin, jos sitä ei ole vielä tehty
         </div>
         <h3>Oma vai takuunalainen?</h3>
         <input type='radio' onclick='takuulaite1();' id='takuulaite1id' name='takuulaite' value='Laite on asiakkaan oma'><label for='takuulaite1id'>Asiakkaan oma laite</label>
@@ -80,7 +86,12 @@
     <div id="toimintaohje4" class="ohje" hidden>Takuumodeemeissa tehdään tarvittaessa softan päivitys ja mahdollinen laitteen vaihto prosessin mukaan. Jos asiakkaalla on muualta hankittu tai takuuton laite -> myy modeemi!
     </div>
     <div id="tehdasasetukset" class="koe" hidden>
-        <div id="testidivi">Huom</br>SMS-optio, jos vika ei ratkea puhelun aikana.</div>
+        <div id="testidivi">
+            <svg class="huomautus"  height="40px" width="40px" fill="black">
+                <use xlink:href='../layout/svg.svg#speech-bubble'/>
+            </svg>
+            SMS-optio, jos vika ei ratkea puhelun aikana.
+        </div>
         <h3>Onko modeemille tehty tehdasasetusten palautus reset-nappia painamalla vian ilmenemisen jälkeen?</h3>
         <input type='radio' onclick='tehdasasetukset1();' id='tehdasasetukset1id' name='tehdasasetukset' value='Tehdasasetukset palautettu ennen puhelua'><label for='tehdasasetukset1id'>Kyllä</label>
         <input type='radio' onclick='tehdasasetukset1();' id='tehdasasetukset2id' name='tehdasasetukset' value='Tehdasasetukset palautettu puhelun aikana'><label for='tehdasasetukset2id'>Tehtiin puhelun aikana</label>
@@ -93,7 +104,8 @@
         <input type='radio' onclick='toinenliittyma_1();' id='toinenliittyma_1id' name='toinenliittyma' value='Laite toimii toisessa liittymässä'><label for='toinenliittyma_1id'>Kyllä</label>
         <input type='radio' onclick='toinenliittyma_2();' id='toinenliittyma_2id' name='toinenliittyma' value='Laite ei toimi toisessa liittymässä'><label for='toinenliittyma_2id'>Ei</label>
     </div>
-    <div id="toimintaohje6" class="ohje" hidden>Oletettavasti asiakkaan modeemi on vialla. Tämän varmistamiseksi olisi hyödyllistä testata toisella modeemilla asiakkaan omassa liittymässä, jotta voidaan esim. lähettää tai myydä uusi modeemi.
+    <div id="toimintaohje6" class="ohje" hidden>Oletettavasti asiakkaan modeemi on vialla. Tämän varmistamiseksi olisi hyödyllistä testata toisella modeemilla asiakkaan omassa liittymässä, jotta voidaan esim. lähettää tai myydä uusi
+        modeemi.
     </div>
     <div id="puhelinrasioita" class="koe" hidden>
         <h3>Onko puhelinrasioita enemmän kuin yksi?</h3>
@@ -104,7 +116,12 @@
         <input type='radio' onclick='puhelinrasioita1();' id='puhelinrasioita4id' name='puhelinrasioita' value='Ei tiedossa, onko useampi puhelinrasia'><label for='puhelinrasioita4id'>Ei tiedossa</label>
     </div>
     <div id=lankapuhelin class="koe" hidden>
-        <div id="testidivi">Huom</br>Muita laitteita ovat esim. UPS, ylijännitesuoja, Fax, varashälytin</div>
+        <div id="testidivi">
+            <svg class="huomautus"  height="40px" width="40px" fill="black">
+                <use xlink:href='../layout/svg.svg#speech-bubble'/>
+            </svg>
+            Muita laitteita ovat esim. UPS, ylijännitesuoja, Fax, varashälytin
+        </div>
         <h3>Onko lankapuhelinta tai muita laitteita kytkettynä puhelinverkkoon?</h3>
         <input type='radio' onclick='lankapuhelin6();' id='lankapuhelin1' name='lankapuhelin' value='Ei lankapuhelinta tai muita laitteita'><label for='lankapuhelin1'>Ei</label>
         <input type='radio' onclick='lankapuhelin6();' id='lankapuhelin2' name='lankapuhelin' value='Lankapuhelin kytkettynä verkkoon'><label for='lankapuhelin2'>On puhelin, varmistakaa että puhelimen rasiassa on suodatin.</label>
@@ -165,7 +182,12 @@
         <input type='radio' onclick='generointi("maksu;tiketti");' id='wifi_tehdas2' name='wifi_tehdas' value='Tehdasasetuksia ei ole palautettu'><label for='wifi_tehdas2'>Ei</label>
     </div>
     <div id="lahiverkko_tehdas" class="koe" hidden>
-        <div id="testidivi">Huom</br>Resetointi palauttaa laitteeseen oletusarvot myös langattoman yhteyden osalta.</div>
+        <div id="testidivi">
+            <svg class="huomautus"  height="40px" width="40px" fill="black">
+                <use xlink:href='../layout/svg.svg#speech-bubble'/>
+            </svg>
+            Resetointi palauttaa laitteeseen oletusarvot myös langattoman yhteyden osalta.
+        </div>
         <h3>Onko modeemille tehty tehdasasetusten palautus vian ilmenemisen jälkeen?</h3>
         <input type='radio' onclick='lahiverkko_tehdas1();' id='lahiverkko_tehdas1' name='lahiverkko_tehdas' value='lahiverkko_tehdas1'><label for='lahiverkko_tehdas1'>Kyllä</label>
         <input type='radio' onclick='lahiverkko_tehdas2();' id='lahiverkko_tehdas2' name='lahiverkko_tehdas' value='lahiverkko_tehdas2'><label for='lahiverkko_tehdas2'>Ei, asiakas resetoi</label>
@@ -177,17 +199,18 @@
         <input type='radio' onclick='rgw2();' id='rgw22' name='rgw' value='rgw2'><label for='rgw22'>Ei</label>
     </div>
     <div id="rgw_tehdas" class="koe" hidden>
-        <div id="testidivi">Huom</br>Resetointi palauttaa laitteeseen oletusarvot myös langattoman yhteyden osalta.</div>
+        <div id="testidivi">
+            <svg class="huomautus"  height="40px" width="40px" fill="black">
+                <use xlink:href='../layout/svg.svg#speech-bubble'/>
+            </svg>
+            Resetointi palauttaa laitteeseen oletusarvot myös langattoman yhteyden osalta.
+        </div>
         <h3>Onko modeemille tehty tehdasasetusten palautus vian ilmenemisen jälkeen?</h3>
         <input type='radio' onclick='rgw_tehdas11();' id='rgw_tehdas1' name='rgw_tehdas' value='rgw_tehdas1'><label for='rgw_tehdas1'>Kyllä</label>
         <input type='radio' onclick='rgw_tehdas22();' id='rgw_tehdas2' name='rgw_tehdas' value='rgw_tehdas2'><label for='rgw_tehdas2'>Ei, asiakas resetoi</label>
         <input type='radio' onclick='rgw_tehdas33();' id='rgw_tehdas3' name='rgw_tehdas' value='rgw_tehdas3'><label for='rgw_tehdas3'>Ei ole resetoitu eikä ole tehty mitään aiemmin pyydettyjä testejä</label>
     </div>
-    <div id="toimintaohje9" class="ohje" hidden>Pyydä asiakasta suorittamaan tehdasasetusten palautus painamalla laitteen reset-painiketta. Takuumodeemeissa softan päivitys, Mahdollinen laitteen vaihto prosessin mukaan. Jos asiakkaalla on muualta
-        hankittu tai takuuton laite -> myy modeemi!
-    </div>
-    <div id="toimintaohje10" class="ohje" hidden>Takuumodeemeissa tehdään tarvittaessa softan päivitys ja mahdollinen laitteen vaihto prosessin mukaan. Jos asiakkaalla on muualta hankittu tai takuuton laite -> myy modeemi!
-    </div>
+
     <div id="atm-ping" class="koe" hidden>
         <h3>Meneekö ATM-ping läpi?</h3>
         <input type='radio' onclick='atm_kylla();' id='atm_kyllaa' name='atm_ping' value='ATM-ping menee läpi'><label for='atm_kyllaa'>Kyllä</label>
@@ -209,7 +232,7 @@
     </div>
 
     <script>
-          function vevi() {
+        function vevi() {
             $("#toimintaohje").show();
             document.getElementById('toimintaohje').innerHTML = "Muista kirjata asiakkaan kuvaus ongelmasta ja omat havainnot ja lisätiedot -kenttään. Linkin status, jos se on saatavilla. ";
             generointi("tiketti");
@@ -237,14 +260,14 @@
         }
 
         function vpi_eii() {
-            generointi("maksu;helpson;sms_optio");
+            generointi("maksu;helppi;sms_optio");
         }
 
         function modeemi_kylla() {
             generointi("maksu;tiketti");
         }
         function modeemi_ei() {
-            generointi("maksu;helpson;sms_optio");
+            generointi("maksu;helppi;sms_optio");
         }
         function linkdown() {
             $("#linkdown").show();
@@ -279,7 +302,7 @@
         function modeemi2ei() {
             $("#testaukset").show();
             $("#wifi").hide();
-            generointi("maksu;helpson;sms_optio");
+            generointi("maksu;helppi;sms_optio");
         }
 
         function rgw1() {
@@ -341,7 +364,7 @@
         }
 
         function toinenjohto2() {
-            generointi("maksu;helpson");
+            generointi("maksu;helppi");
         }
 
         function takuulaite1() {
@@ -410,20 +433,18 @@
         }
 
         function rgw_tehdas11() {
-            $("#toimintaohje10").show();
-            $("#toimintaohje9").hide();
+            huomautus("Takuumodeemeissa tehdään tarvittaessa softan päivitys ja mahdollinen laitteen vaihto prosessin mukaan. Jos asiakkaalla on muualta hankittu tai takuuton laite -> myy modeemi!");
             generointi("tiketti");
         }
 
         function rgw_tehdas22() {
-            $("#toimintaohje10").hide();
             generointi("sms_optio");
         }
 
 
         function rgw_tehdas33() {
-            $("#toimintaohje9").show();
-            $("#toimintaohje10").hide();
+            huomautus("Pyydä asiakasta suorittamaan tehdasasetusten palautus painamalla laitteen reset-painiketta. Takuumodeemeissa softan päivitys, Mahdollinen laitteen vaihto prosessin mukaan. Jos asiakkaalla on muualta hankittu tai " +
+                "takuuton laite -> myy modeemi!")
             generointi("maksu;tiketti");
         }
 
