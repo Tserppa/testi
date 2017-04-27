@@ -94,7 +94,7 @@
     <div id="toinenjohto" class="koe" hidden>
         <h3>Onko testattu puhelinrasian ja modeemin välillä toista johtoa ilman jatkojohtoa ja muita laitteita? </h3>
         <input type='radio' onclick='generointi("maksu;tiketti");' id='toinenjohto1id' name='toinenjohto' value='Toinen johto testattu'><label for='toinenjohto1id'>Kyllä</label>
-        <input type='radio' onclick='generointi("maksu;helpson;sms_optio");' id='toinenjohto2id' name='toinenjohto' value='Ei testattu toista johtoa, mutta pyydetty testaamaan'><label for='toinenjohto2id'>Pyydetty testaamaan</label>
+        <input type='radio' onclick='generointi("maksu;helppi;sms_optio");' id='toinenjohto2id' name='toinenjohto' value='Ei testattu toista johtoa, mutta pyydetty testaamaan'><label for='toinenjohto2id'>Pyydetty testaamaan</label>
         <input type='radio' onclick='generointi("maksu;tiketti");' id='toinenjohto3id' name='toinenjohto' value='Ei halua/pysty testaamaan toista johtoa'><label for='toinenjohto3id'>Ei pysty tai halua testata</label>
     </div>
 
@@ -123,15 +123,15 @@
     <div id="ilmanreititinta" class="koe" hidden>
         <h3>Hidasteleeko myös ilman reititintä?</h3>
         <input type='radio' onclick='ilmanreititinta_1();' id='ilmanreititinta_1_id' name='ilmanreititinta' value='Hidastelee ilman reititintä'><label for='ilmanreititinta_1_id'>Kyllä</label>
-        <input type='radio' onclick='generointi("helpson");;' id='ilmanreititinta_2_id' name='ilmanreititinta' value='Ei hidastele reitittimen kanssa'><label for='ilmanreititinta_2_id'>Ei.</label>
+        <input type='radio' onclick='generointi("helppi");;' id='ilmanreititinta_2_id' name='ilmanreititinta' value='Ei hidastele reitittimen kanssa'><label for='ilmanreititinta_2_id'>Ei.</label>
         <input type='radio' onclick='ilmanreititinta_3();' id='ilmanreititinta_3_id' name='ilmanreititinta' value='Ei ole testannu ilman reititintä '><label for='ilmanreititinta_3_id'>Ei ole testattu</label>
     </div>
     <div id="toimintaohje" class="ohje" hidden></div>
     <div id="tehdasasetukset2" class="koe" hidden>
         <h3>Onko tehdasasetukset palautettu vian ilmenemisen jälkeen?</h3>
         <input type='radio' onclick='f_142321();' id='id_142321' name='tehdasasetukset2' value='Tehdasasetukset palautettu, modeemia ei vaihdettu'><label for='id_142321'>Kyllä, modeemia ei ole aiemmin vaihdettu tämän vian vuoksi.</label>
-        <input type='radio' onclick='generointi("maksu;helpson;tiketti;);' id='id_142322' name='tehdasasetukset2' value='Ei pysty/halua palauttaa tehdasasetuksia'><label for='id_142322'>Ei pysty tai halua testata</label>
-        <input type='radio' onclick='generointi("maksu;helpson;tiketti");' id='id_142323' name='tehdasasetukset2' value='Ei ole kotona, palauttaa tehdasasetukset kun pystyy'><label for='id_142323'>Ei ole kotona, testaa sitten kun
+        <input type='radio' onclick='generointi("maksu;helppi;tiketti;);' id='id_142322' name='tehdasasetukset2' value='Ei pysty/halua palauttaa tehdasasetuksia'><label for='id_142322'>Ei pysty tai halua testata</label>
+        <input type='radio' onclick='generointi("maksu;helppi;tiketti");' id='id_142323' name='tehdasasetukset2' value='Ei ole kotona, palauttaa tehdasasetukset kun pystyy'><label for='id_142323'>Ei ole kotona, testaa sitten kun
             pystyy</label>
         <input type='radio' onclick='generointi("maksu;tiketti");' id='id_142324' name='tehdasasetukset2' value='Tehtasasetukset palautettu, modeemi vaihdettu'><label for='id_142324'>Kyllä, modeemi on jo vaihdettu tämän vian vuoksi</label>
     </div>
@@ -144,7 +144,7 @@
         }
         function ilmanreititinta_3() {
             huomautus("Jos vika ei vielä ratkennut, pyydä testaamaan suoraan modeemista verkkokaapelilla ja palauttamaan modeemiin tehdasasetukset. Pyydä vastaamaan sms-optioon jos vika jatkuu testausten jälkeen. Jos testauksia ei pysty suorittamaan kirjaa tiketti ja mainitse 99e");
-            generointi("maksu;helpson;tiketti;sms_optio");
+            generointi("maksu;helppi;tiketti;sms_optio");
         }
         function f_13() {
             $("#puhelinrasioita1").show();
@@ -153,7 +153,7 @@
         }
         function f_14231() {
             huomautus("Kyseessä on wlan ja/tai muu asiakaslaiteongelma, koska yhteys toimii hidastelematta modeemiin asti. WLAN-ongelmatapauksissa pyydä asiakasta olemaan yhteydessä Helpsoniin. Jos tiketti tehdään niin 99€ pitää mainita!Jos asiakkaalla on muualta hankittu tai takuuton laite ja vika on rajattu siihen -> myy modeemi!");
-            generointi("maksu;helpson;tiketti;sms_optio");
+            generointi("maksu;helppi;tiketti;sms_optio");
         }
 
         function f_142321() {
@@ -174,7 +174,7 @@
         function kaikillalaitteilla_2() {
             $("#toimintaohje").show();
             document.getElementById('toimintaohje').innerHTML = "Vika jää hyvin todennäköisesti asiakkaan päätelaitteeseen tai sen ja reitittimen väliseen yhteyteen. Ei optiota eikä tikettiä, 99e maininta mikäli as. vaatii asentajakäyntiä";
-            generointi("helpson");
+            generointi("helppi");
         }
         function f_14232() {
             $("#toimintaohje").show();
@@ -183,23 +183,23 @@
         }
         function f_112() {
             huomautus("Pyydetään asiakasta testaamaan verkkokaapelilla suoraan modeemin lähiverkkoportista (kannattaa ohjeistaa testaamaan useammasta eri portista, jos mahdollista myös eri päätelaitteilla).Pyydä asiakasta olemaan yhteydessä Helpsoniin mikäli testaaminen tuntuu vaikealta.");
-            generointi("maksu;helpson;sms_optio");
+            generointi("maksu;helppi;sms_optio");
         }
 
         function f_113() {
             huomautus("Vika on hyvin todennäköisesti asiakkaan laiteympäristössä. Pyydä asiakasta olemaan yhteydessä Helpsoniin.SMS-option voi tarvittaessa kirjata jos se nähdään aiheelliseksi. Jos asiakas on lähiaikoina ollut yhteydessä samasta viasta, eikä tästä ole aiemmin kirjattu tikettiä, niin siinä tapauksessa voi avata tiketin. Tällöin aina maininta asentajakäyntimaksusta 99€.");
-            generointi("maksu;helpson;tiketti;sms_optio");
+            generointi("maksu;helppi;tiketti;sms_optio");
         }
 
         function f_114() {
             huomautus("Pyydä asiakasta testaamaan yhteyttä toisella modeemilla ja tietokoneella.");
-            generointi("maksu;helpson;tiketti;sms_optio");
+            generointi("maksu;helppi;tiketti;sms_optio");
         }
 
         function f_1111() {
             $('#toimintaohje').show();
             $('#toimintaohje').text("Kyseessä on wlan ja/tai muu asiakaslaiteongelma, koska yhteys toimii hidastelematta modeemiin asti. WLAN-ongelmatapauksissa pyydä asiakasta olemaan yhteydessä Helpsoniin. Jos tiketti tehdään niin 99€ pitää mainita!                Jos asiakkaalla on muualta hankittu tai takuuton laite ja vika on rajattu siihen -> myy modeemi!");
-            generointi("maksu;helpson;tiketti;sms_optio");
+            generointi("maksu;helppi;tiketti;sms_optio");
         }
 
         function f_1112() {
@@ -214,11 +214,11 @@
         }
         function f_11122() {
             // Muistutus näkyviin: Miksi? Kirjaa syy "Agentin omat havainnot ja lisätiedot"-kenttään
-            generointi("maksu;helpson;tiketti");
+            generointi("maksu;helppi;tiketti");
 
         }
         function f_11123() {
-            generointi("maksu;helpson;sms_optio");
+            generointi("maksu;helppi;sms_optio");
         }
         function f_11124() {
             generointi("maksu;tiketti");

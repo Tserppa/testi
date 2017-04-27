@@ -1,9 +1,25 @@
+@font-face {
+    font-family: Pebble;
+    src: url('../layout/pebble.ttf');
+}
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url('../layout/HelveticaNeue.ttf');
+}
+
 body {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 8pt;
     margin: 0;
     text-align: left;
-    margin-left: 10px;
+}
+
+
+table, td, tr, th{
+    border: 1px solid black;
+    font-family: "Helvetica Neue";
+    font-size: 8pt;
+    text-align: center;
+    padding: 3px;
 }
 
 input[type='number'] {
@@ -13,7 +29,7 @@ input[type='number'] {
 input[type='text'], input[type='number'],textarea.kapea,textarea.vikakuvaus {
     background: white;
     padding: 3px;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Helvetica Neue";
     letter-spacing: 0.8pt;
     font-size: 9pt;
     color: black;
@@ -32,7 +48,7 @@ textarea.kapea {
 }
 
 textarea.vikakuvaus {
-    height: 160px;
+    height: 168px;
 }
 
 input[type='text'].lyhyt {
@@ -42,7 +58,7 @@ input[type='text'].lyhyt {
 textarea {
     position: relative;
     background-color: #e1e1e1;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Helvetica Neue";
     letter-spacing: 0.8pt;
     font-size: 9pt;
     color: black;
@@ -64,26 +80,29 @@ input[type='text'].sms {
 }
 
 select {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Helvetica Neue";
     font-size: 8pt;
 }
 
 label {
     display: inline-block;
-    background-color: #e1e1e1;
+    background-color: #f2f2f2;
     padding: 4px 11px;
-    border: 1px solid black;
-    border-radius: 3px;
+    border: 2px solid #990AE3;
+    border-radius: 999px;
     margin-right: 5px;
     margin-bottom: 10px;
+    color: #990AE3;
+    font-family: "Helvetica Neue";
 }
 
 label:hover {
-    background-color: #999999;
+    background-color: #990AE3;
+    color: white;
 }
 
 input[type="radio"]:checked + label {
-    background-color: #642887;
+    background-color: #990AE3;
     color: white;
     animation-name: sytytys;
     animation-duration: 0s;
@@ -91,11 +110,11 @@ input[type="radio"]:checked + label {
 
 @keyframes sytytys {
     0% {
-        background-color: #e1e1e1;
+        background-color: #f2f2f2;
         color: black;
     }
     100% {
-        background-color: #642887;
+        background-color: #990AE3;
         color: white;
     }
 }
@@ -105,57 +124,41 @@ input[type="radio"] {
 }
 
 #lomake {
-    min-width: 800px;
-    width: 60%;
-    float: left;
+    width: 100%;
 }
-
-
-#vikaripohja {
-    position: relative;
-    top: 56px;
-    width: 500px;
-
-    margin-left: 60.5%;
-    border: 1px dashed black;
-}
-
 
 #vakiopohjan_alku, #vakiopohjan_loppu, #lomakesisalto,#vikaripohja {
-    background-color: lightblue;
-    padding: 5px;
-    border: 1px solid black;
-    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding-left: 1%;
 }
 
 #vakiopohjan_loppu {
+    padding-top: 10px;
+    width: 49%;
+    float: left;
     position: relative;
-    top: 56px;
-    width: 500px;
-    margin-left: 60.5%;
-    border: 1px dashed black;
+    height: 350px;
+}
 
+#vikaripohja {
+    padding-top: 10px;
+    position: relative;
+    float: right;
+    width: 49%;
+    height: 350px;
 }
 
 #vakiopohjan_alku {
-    height: 30px;
     transition: height 0.5s;
     -webkit-transition: height 0.5s;
     overflow: hidden;
 }
 
-h2:hover {
-    cursor: pointer;
-    background-color: cornflowerblue;
-    border-radius: 3px;
-}
-
 .laajennus{
-    min-height: 260px;
+    height: 30px;
 }
 
 #alku_vasen {
-    margin-left: 1%;
     width: 30%;
     float: left;
 }
@@ -168,104 +171,133 @@ h2:hover {
 .koe {
     position: relative;
     margin-bottom: 1px;
-    text-align: center;
-    width: 80%;
-    left: 10%;
+    text-align: left;
+    width: 100%;
 }
 
-
 #toimintaohje, #toimintaohje2, #toimintaohje3, #toimintaohje4, #toimintaohje5, #toimintaohje6, #toimintaohje7, #toimintaohje8, #toimintaohje9 {
-    position: relative;
-    left: 25%;
-    width: 50%;
+    top: 5px;
     padding: 5px;
-    margin-bottom: 5px;
+    width: 99%;
+    margin-bottom: 10px;
     border-radius: 3px;
-    border: 1px solid #642887;
-    background-color: white;
-    color: black;
     font-size: 10pt;
-    font-family: Calibri;
+    font-family: "Helvetica Neue";
+    text-align: left;
+    background-color: lightblue;
+    color: black;
 }
 
 #testidivi {
-    position: relative;
     top: 5px;
     padding: 5px;
-    width: 100%;
+    width: 99%;
+    min-height: 55px;
     margin-bottom: 10px;
     border-radius: 3px;
-    background-color: #b4f5ff;
-    border: 1px solid black;
     font-size: 10pt;
-    font-family: Calibri;
+    font-family: "Helvetica Neue";
     text-align: left;
+    background-color: lightgrey;
+    color: black;
+}
+
+#testidivi.ohje{
+    background-color: red;
+}
+
+#testidivi.huomio{
+    background-color: lightgrey;
+}
+
+
+li {
+    font-size: 10pt;
+    font-family: "Helvetica Neue";
+
+}
+
+svg.huomautus{
+    float: lefT;
+    margin: 5px 10px 10px 10px;
 }
 
 textarea.toimintaohje {
     width: 100%;
     left: 0px;
     border: 0px;
-    text-align: center;
+    text-align: left;
     background: none;
 }
 
 textarea.asiakasinfo {
     width: 100%;
-    height: 200px;
+    min-height: 100%;
     margin-left: 10px;
-    border: 0px;
+    border: 0;
     text-align: left;
     background: none;
     padding: 5px 20px 5px 5px;
     margin-bottom: 1px;
     border-radius: 3px;
     color: black;
-    font-size: 10pt;
-    font-family: Calibri;
+    font-size: 8pt;
+    font-family: "Helvetica Neue";
 }
 
 .generoitu {
-    height: 18em;
-    background-color: white;
-    border: 1px dashed #642887;
+    height: 70%;
     padding: 5px;
     margin-bottom: 1px;
-    border-radius: 3px;
     color: black;
-    font-size: 10pt;
-    font-family: Calibri;
+    font-size: 8pt;
+    font-family: "Helvetica Neue";
+    border: 0;
+    background-color: white;
+    width: 98%;
 }
 
 input[type="button"], input[type="reset"], input[type="submit"] {
-    width: 100px;
     padding: 5px;
-    font-family: Calibri;
-    border: 1px solid black;
+    font-family: "Helvetica Neue";
     margin-bottom: 1px;
+    border: 2px solid #990AE3;
+    border-radius: 999px;
 }
 
 input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover {
-    background-color: #00a2e2;
+    background-color: red;
     color: white;
 
 }
 
 h2 {
-    padding-left: 10px;
     font-size: 12pt;
-    font-family: Calibri;
-    margin-top: 5px;
+    font-family: Pebble;margin-top: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
 }
+
+
+h2:hover {
+    cursor: pointer;
+    background-color: lightgrey;
+}
+
 
 h3 {
-    margin-top: 0px;
+    font-size: 10pt;
+    font-family: Pebble;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
 }
 
-.alusta {
-    background: indianred;
-    color: white;
+#ikoni {
+    position: relative;
+    right: 10px;
+    float: right;
+    text-align: right;
+    top: -25px;
 }
-.vihrea {
-     background: lightgreen;
- }

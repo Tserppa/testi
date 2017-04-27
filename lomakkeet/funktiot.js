@@ -12,7 +12,7 @@ function reset_asiakas() {
         document.getElementById('yhtnro').value = "";
         document.getElementById('userid').value = "";
         document.getElementById('vikakuvaus').innerHTML = "";
-        document.getElementById('datepicker').innerHTML = "öö";
+        document.getElementById('datepicker').innerHTML = "";
     }
 }
 
@@ -23,27 +23,43 @@ function huomautus(sisalto) {
 function generointi(vaihtoehdot) {
     var purettu = vaihtoehdot.split(";");
     var purettuPituus = purettu.length;
-
+    generoi();
     for (var i = 0; i < purettuPituus; i++) {
         document.getElementById('asiakasinfo').innerHTML = document.getElementById('asiakasinfo').value + (i + 1) + ". ";
         switch (purettu[i]) {
             case "maksu":
-                document.getElementById('asiakasinfo').innerHTML = document.getElementById('asiakasinfo').value + "99e: Kerro asiakkaalle, että turha asentajakäynti maksaa 99 € mikäli vika jää asiakkaan laitteisiin, johtoihin tai" +
+                document.getElementById('asiakasinfo').innerHTML = document.getElementById('asiakasinfo').value + "100e: Kerro asiakkaalle, että turha asentajakäynti maksaa 100 € mikäli vika jää asiakkaan laitteisiin, johtoihin tai" +
                     " kytkentöihin.\n";
                 break;
             case "tiketti":
                 document.getElementById('asiakasinfo').innerHTML = document.getElementById('asiakasinfo').value + "Vikailmoitus: Tarvittavat laitetestit on käyty läpi tai asiakas ei halua testata laitteitaan. Kirjaa tiketti Alphaan ja laita" +
                     " tapahtumatiedot ja vika-analyysi UAD:lle.\n";
                 break;
-            case "helpson":
-                document.getElementById('asiakasinfo').innerHTML = document.getElementById('asiakasinfo').value + "Helpson: Ohjaa asiakas Helpsonille ja kirjaa vika-analyysi UAD:lle\n";
+            case "helppi":
+                document.getElementById('asiakasinfo').innerHTML = document.getElementById('asiakasinfo').value + "Helppi: Ohjaa asiakas Helppiin ja kirjaa vika-analyysi UAD:lle\n";
                 break;
             case "tt":
                 document.getElementById('asiakasinfo').innerHTML = document.getElementById('asiakasinfo').value + "Toimituksen tarkastus: Kirjaa toimituksentarkastus Alphaan ja laita tapahtumatiedot ja vika-analyysi UAD:lle\n";
                 break;
             case "sms_optio":
                 document.getElementById('asiakasinfo').innerHTML = document.getElementById('asiakasinfo').value + "SMS-optio: Asiakas testaa vielä laitteensa. Kirjaa tiketti Alphaan ja laita tapahtumatiedot ja vika-analyysi UAD:lle\n";
-                $("#generoitu").append("\nSMS-Optio")
+                $("#generoitu").append("\nSMS-Optio");
+                $("#sms").show();
+                break;
+            case "ottvikari2":
+                document.getElementById('asiakasinfo').innerHTML = document.getElementById('asiakasinfo').value + "Lomakepohjan perusteella generoidaan vikailmoitus, joka tallennetaan Alpha2-järjestelmään. Puhelun yhteydessä asiakkaalle informoidaan alustava viankorjausaika kaksi arkipäivää. Tekstari asiakkaalle: Hei, Telia TV mobiilissa-palvelustasi on kirjattu vikailmoitus. Viankorjauksen alustava korjausaika on kaksi arkipäivää. T. Telia";
+                break;
+            case "ottvikari5":
+                document.getElementById('asiakasinfo').innerHTML = document.getElementById('asiakasinfo').value + "Lomakepohjan perusteella generoidaan vikailmoitus, joka tallennetaan Alpha2-järjestelmään. Puhelun yhteydessä asiakkaalle" +
+                    " informoidaan alustava viankorjausaika viisi arkipäivää. Tekstari asiakkaalle: Hei, Telia TV mobiilissa-palvelustasi on kirjattu vikailmoitus. Viankorjauksen alustava korjausaika on kaksi arkipäivää. T. Telia";
+                break;
+            case "vikari5":
+                document.getElementById('asiakasinfo').innerHTML = document.getElementById('asiakasinfo').value + "Lomakepohjan perusteella generoidaan vikailmoitus, joka tallennetaan Alpha2-järjestelmään. Puhelun yhteydessä asiakkaalle informoidaan alustava viankorjausaika viisi arkipäivää. Tekstari asiakkaalle: Hei, Telia TV -palvelustasi on kirjattu vikailmoitus. Viankorjauksen alustava korjausaika on viisi arkipäivää. T. Telia";
+                break;
+            case "testaukset":
+                document.getElementById('asiakasinfo').innerHTML = document.getElementById('asiakasinfo').value + "Lomakepohjan perusteella generoidaan SMS-optio, joka tallennetaan UAD:lle kommenttina. Puhelun aikana asiakkaalle" +
+                    " ohjeistus puuttuvien asioiden testauksesta. Tämän jälkeen vastaa viestiin. Tekstari asiakkaalle: Hei, mikäli vikatilanteesi jatkuu ohjeistamiemme laitetestienkin jälkeen";
+                $("#generoitu").append("\nSMS-Optio");
                 $("#sms").show();
                 break;
             default:
@@ -51,17 +67,19 @@ function generointi(vaihtoehdot) {
                 break;
         }
     }
-    generoi();
+
     $("#vikaripohja").show();
     $("#vakiopohjan_loppu").show();
+    window.scrollTo(10000,10000);
+
 }
 
 $(function () {
     $("#datepicker").datepicker();
 });
 
-function expand() {
-    $("#vakiopohjan_alku").toggleClass("laajennus");
+function expand(that) {
+    $(that).parent().toggleClass("laajennus");
 }
 
 function tarkistatiedot() {
@@ -79,6 +97,7 @@ function generoi() {
             $("#generoitu").append(field.value + "\n");
         }
     });
+
 }
 
 

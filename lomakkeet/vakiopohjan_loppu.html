@@ -1,11 +1,19 @@
-</div><div id="vakiopohjan_loppu" hidden>
+<br>
+<div id="vakiopohjan_loppu" hidden>
     <h2>Ratkaisuvaihtoehdot</h2>
     <TEXTAREA id="asiakasinfo" class="asiakasinfo" placeholder="Työohje" disabled></TEXTAREA>
 </div>
-<br>
+
 <div id="vikaripohja" hidden>
     <h2>Vikailmoituspohja</h2>
     <TEXTAREA id="generoitu" class="generoitu" placeholder="Generoitu vikailmoitus"></TEXTAREA>
+
+
+    <a href="#" onclick="show_sms();"type="submit" class="button button--purchase button--small"><span class="button--text">Lähetä SMS-optio</span></a>
+
+    <!--
+    <a href="#" onclick="generoi();" class="button button--secondary button--small"><span class="button--text">Generoi vikalomake</span></a>
     <input type="button" onclick='generoi();' value="Generoi vikalomake">
     <input type="button" id="sms" class="vihrea" onclick='show_sms();' value="Lähetä SMS-optio" hidden>
+    -->
 </div>

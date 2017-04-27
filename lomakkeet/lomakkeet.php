@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <title>Vikalomakkeet</title>
     <link href="normalize.css" rel="stylesheet" type="text/css"/>
+    <link href="../layout/pride-styles.css" rel="stylesheet" type="text/css"/>
+    <link href="layout/toinen.css" rel="stylesheet" type="text/css"/>
+
     <link href="lomake_style.css" rel="stylesheet" type="text/css"/>
     <link href="datepicker.css" rel="stylesheet" type="text/css"/>
 
@@ -20,12 +23,12 @@
 <body>
 
 <?php
+
 session_start();
 date_default_timezone_set('Europe/Helsinki');
 $date = date('Y-m-d');
 
 if (!empty($_POST)) {
-
     $_SESSION['liittyma'] = $_POST ["liittymanumero"];
     $_SESSION['puhnro'] = $_POST ["yhtnro"];
     $_SESSION['tunnus'] = $_POST ["userid"];
@@ -38,16 +41,15 @@ if (!empty($_POST)) {
 <div id="lomake">
     <?php
     $lomake = $_GET['lomake'];
-    include 'header.html';
-    echo "<br><br>";
+    include 'analyysi.html';
 
     if ($lomake == "") {
         echo "<h3>Valitse lomake aloittaaksesi :)</h3>";
     } else {
         include 'vakiopohjan_alku.html';
-        echo "<div id=lomakesisalto><h2>Vikalomake</h2>";
+        echo "<div id=lomakesisalto>";
         include $lomake . ".php";
-        echo "</div><br>";
+        echo "</div>";
         include 'vakiopohjan_loppu.html';
     }
     ?>

@@ -75,15 +75,15 @@
         }
         function f_1121() {
             huomautus("Viankorjaus ei ole Soneran vastuulla, yhteys toimii asuntoon asti. Jos yhteys toimii tietokoneella muttei Soneran RGW:llä tai takuunalaisella reitittimellä ja verkkokaapeli on vaihdettu kirjaa asiasta tiketti");
-            generointi("maksu;helpson;");
+            generointi("maksu;helppi;");
         }
         function f_1122() {
             huomautus("Pyydä kokeilemaan toisella laitteella ja varmistamaan että verkkokaapeli on kunnossa. Vika on todennäköisesti asiakkaan laitteessa tai jakamokaapin verkkokaapelissa.");
-            generointi("maksu;helpson;sms_optio");
+            generointi("maksu;helppi;sms_optio");
         }
         function f_12() {
             huomautus("Vika on todennäköisesti asunnon sisäverkossa, asiakkaan reitittimessä tai tietokoneessa mutta Soneran osuutta ei voida rajata pois ilman testausta suoraan noususta. Ei optiota koska as. ei pysty/suostu testaamaan. Asiakas pitää ohjata Helpsonille, 99e maininta mikäli as. vaatii tikettiä tai asentajakäyntiä");
-            generointi("maksu;helpson;tiketti");
+            generointi("maksu;helppi;tiketti");
 
         }
         function f_13() {
@@ -92,7 +92,7 @@
         }
         function f_41() {
             huomautus("Vika on todennäköisesti asunnon sisäverkossa, asiakkaan reitittimessä tai tietokoneessa mutta Soneran osuutta ei voida rajata pois ilman testausta suoraan noususta. Ei optiota koska as. ei pysty/suostu testaamaan. Asiakas pitää ohjata Helpsonille, 99e maininta mikäli as. vaatii tikettiä tai asentajakäyntiä. Jos ei ole toiminut koskaan ja toimituksesta alle 3kk, niin katso TT-ohje.");
-            generointi("maksu;helpson;tiketti;tt");
+            generointi("maksu;helppi;tiketti;tt");
         }
         function f_43() {
             huomautus("Jotta mahdollinen asunnon sisäverkkovika saataisiin rajattua pois on tärkeää että asiakas kokeilee yhteyttä suoraan nousuportista mielellään parilla eri verkkokaapelilla ja laitteella. Jos ei ole toiminut koskaan ja toimituksesta alle 3kk, niin katso TT-ohje.");
@@ -101,12 +101,12 @@
 
         function f_1141() {
             huomautus("Viankorjaus ei ole Soneran vastuulla, yhteys toimii asuntoon asti. Sisäverkko on asiakkaan / taloyhtiön vastuulla. Pyydä asiakasta olemaan yhteydessä isännöitsijään. Jos yhteys toimii tietokoneella muttei Soneran RGW:llä tai takuunalaisella reitittimellä ja verkkokaapeli on vaihdettu kirjaa asiasta tiketti");
-            generointi("maksu;helpson");
+            generointi("maksu;helppi");
         }
 
         function f_1142() {
             huomautus("Pyydä kokeilemaan toisella laitteella ja varmistamaan että verkkokaapeli on kunnossa. Vika on todennäköisesti asiakkaan laitteessa tai jakamokaapin verkkokaapelissa.");
-            generointi("maksu;helpson;sms_optio");
+            generointi("maksu;helppi;sms_optio");
         }
         function f_441() {
             huomautus("Jos ei ole toiminut koskaan ja toimituksesta alle 3kk, niin katso TT-ohje.");

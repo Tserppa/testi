@@ -23,7 +23,8 @@ $vastaanottaja = str_replace("-","", $_GET['yhtnro']);
 ?>
 <h3>Lähetä SMS-optio:</h3>
 <form accept-charset="iso-8859-1" action="sms_send.php" method="post">
-	Viesti:<br><textarea name="content" class="sms">Ongelman jatkuessa ja varmistettuanne, ettei yhteysongelma johdu teidän laitteistanne, lähettäkää seuraava viesti numeroon 18100: vika <?php echo $liittymanumero;?>. T Sonera</textarea></br>
+	Viesti:<br><textarea name="content" class="sms">Ongelman jatkuessa ja varmistettuanne, ettei yhteysongelma johdu teidän laitteistanne, lähettäkää seuraava viesti numeroon 18100: vika <?php echo $liittymanumero;?>. T
+        Telia</textarea></br>
 	Lähettäjän numero:<br><input class="sms" type="text" name="sender" value="18100"><br> 
 	Vastaanottajan numero:<br><input class="sms" type="text" name="receiver" value="<?php echo $vastaanottaja;?>"><br><br>
 	<input type='submit' name='submit' value='Lähetä'>

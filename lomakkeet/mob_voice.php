@@ -11,7 +11,9 @@
     </div>
 
     <div id="uudelleenkaynnistys" class="koe" hidden>
-        <div id="testidivi">Hae asiakas mbossille. Tarkista hälyt Alarm- mapilta</div>
+        <div id="testidivi"><svg class="huomautus"  height="40px" width="40px" fill="black">
+                <use xlink:href='../layout/svg.svg#speech-bubble'/>
+            </svg>Hae asiakas mbossille. Tarkista hälyt Alarm- mapilta</div>
         <h3>Laitteen uudelleenkäynnistys</h3>
         <input type='radio' onclick='$("#akillisesti2").show();' id='id_4' name='uudelleenkaynnistys' value='Laite on käynnistetty uudelleen'><label for='id_4'>Laite on käynnistetty uudelleen</label>
         <input type='radio' onclick='$("#akillisesti").show();' id='id_5' name='uudelleenkaynnistys' value='Laitetta ei ole käynnistetty uudelleen'><label for='id_5'>Laitetta ei ole käynnistetty uudelleen</label>
@@ -30,10 +32,12 @@
     </div>
 
     <div id="sijainti" class="koe" hidden>
-        <div id="testidivi">Tarkista VIHTI yleisten vikojen varalta.</div>
+        <div id="testidivi"><svg class="huomautus"  height="40px" width="40px" fill="black">
+                <use xlink:href='../layout/svg.svg#speech-bubble'/>
+            </svg>Tarkista VIHTI yleisten vikojen varalta.</div>
         <h3>Onko ongelmia tietyssä vain sijainnissa</h3>
         <input type='radio' onclick='$("#useammalla").show();' id='id111' name='sijainti' value='Ongelmaa on kaikkialla'><label for='id111'>Ongelmaa on kaikkialla</label>
-        <input type='radio' onclick='' id='id112' name='sijainti' value='Asiakas ei osaa sanoa, onko vikaa kaikkialla.'><label for='id112'>Asiakas ei osaa sanoa, onko vikaa kaikkialla.</label>
+        <input type='radio' onclick='$("#useammalla").show();' id='id112' name='sijainti' value='Asiakas ei osaa sanoa, onko vikaa kaikkialla.'><label for='id112'>Asiakas ei osaa sanoa, onko vikaa kaikkialla.</label>
         <input type='radio' onclick='f113();' id='id113' name='sijainti' value='Ongelmia vain yhdessä sijainnissa. Laite toimii muualla normaalisti. '><label for='id113'>Ongelmia vain yhdessä sijainnissa. Laite toimii muualla
             normaalisti. </label>
     </div>
@@ -74,7 +78,7 @@
 
         function f22() {
             huomautus("Neuvo asiakasta käynnistämään laite uudelleen ja nollaamaan verkkoasetukset. Useimmat viat korjaantuvat laitteen uudelleenkäynnistyksellä.");
-            generointi("Kyseessä on päätelaitteesta johtuva ongelma. Ongelman toistuessa kannattaa ohjata asiakasta testaamaan toista päätelaitetta. Jos ongelma ei toistu muilla päätelaitteilla ja sama vika jatkuu yhdessä laitteessa, on päätelaite viallinen. Tällöin neuvo asiakkaalle laitteen huolto: http://intranet.teliasonera.net/Workroom/finnish/asiakaspalvelu/tupa/mobiili/Pages/Sonera-huolto-ohjeet.aspx");
+            generointi("Kyseessä on päätelaitteesta johtuva ongelma. Ongelman toistuessa kannattaa ohjata asiakasta testaamaan toista päätelaitetta. Jos ongelma ei toistu muilla päätelaitteilla ja sama vika jatkuu yhdessä laitteessa, on päätelaite viallinen. Tällöin neuvo asiakkaalle laitteen huolto: http://intranet.teliasonera.net/Workroom/finnish/asiakaspalvelu/tupa/mobiili/Pages/Telia-huolto-ohjeet.aspx");
         }
 
         function f113() {
@@ -82,7 +86,7 @@
             generointi("Kirjaa tarvittaessa tiksu esimerkein, mikäli ongelmaan ei löydy vastausta. Jos alueelta on jo useita tiksuja, kerro asiakkaalle, että vikaa tutkitaan. Jos asiakas vaatii asiasta tietoa, liitä tiketti parent tikettiin.");
         }
         function f1113() {
-            generointi("Ongelma vaikuttaa laajemmalta vikatilanteelta. Tarkista Vihti, IRC #premiumsupport -kanava ja vieruskaverien tietämys aiheesta. Tiedustele tarvitseeko asiasta lisää vikatikettejä. Pahoittele viasta aiheutunutta häiriötä ja neuvo asiakasta seuraamaan Sonera.fi/vikatiedote. (Huom: Ohjaa yritysasiakkaat yritysportaaliin)");
+            generointi("Ongelma vaikuttaa laajemmalta vikatilanteelta. Tarkista Vihti, IRC #premiumsupport -kanava ja vieruskaverien tietämys aiheesta. Tiedustele tarvitseeko asiasta lisää vikatikettejä. Pahoittele viasta aiheutunutta häiriötä ja neuvo asiakasta seuraamaan Telia.fi/vikatiedote. (Huom: Ohjaa yritysasiakkaat yritysportaaliin)");
         }
         function f11111() {
             generointi("Tarkista onko liittymälle tehty muutoksia (UAD, NAK, NM210),jotka voivat vaikuttaa puheluihin. Esimerkiksi juuri siirrettyjen liittymien reititys ja soitonsiirrot (soitonsiirto väärään numeroon). Tarkista liittymän palvelut. Tee tarvittaessa tiksu, mikäli et saa itse ratkaistua ongelmaa.");

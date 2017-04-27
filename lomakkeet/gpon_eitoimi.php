@@ -61,7 +61,7 @@
         function f_131() {
             $("#toimintaohje").show();
             document.getElementById('toimintaohje').innerHTML = "Pyydä asiakasta käynnistämään laitteet uudelleen / palauttamaan tehdasasetukset ja olemaan tarvittessa yhteydessä Helpsoniin. Tiketti voidaan kirjata mikäli asiakas sitä vaatii tai jos yhteys ei ole toiminut vielä kertaakaan";
-            helpson();
+            helppi();
             maksu();
             tiketti();
             sms_optio();
@@ -71,7 +71,7 @@
         function f_132() {
             $("#toimintaohje").show();
             document.getElementById('toimintaohje').innerHTML = "Pyydä asiakasta lähtökohtaisesti olemaan yhteydessä Helpsoniin tai  testaamaan toisella tietokoneella. Tiketti voidaan kirjata mikäli asiakas sitä vaatii tai jos yhteys ei ole toiminut vielä kertaakaan";
-            helpson();
+            helppi();
             maksu();
             tiketti();
             sms_optio();
@@ -80,8 +80,9 @@
         }
         function f_11() {
             $("#toimintaohje").show();
-            document.getElementById('toimintaohje').innerHTML = "Yhteys toimii asuntoon asti, mikäli vika on Soneran RGW:ssä tai takuunalaisessa reitittimessä pyydä palauttamaan laitteeseen tehdasasetukset. Jos sekään ei auta eikä laitetta ole vielä vaihdettu tämän vian takia tee mahdollinen laitteen vaihto prosessin mukaan. Jos asiakkaalla on muualta hankittu tai takuuton laite -> myy reititin! Pyydä muutoin asiakasta olemaan yhteydessä Helpsoniin. Jos tiketti tehdään niin 99€ pitää mainita!";
-            helpson();
+            document.getElementById('toimintaohje').innerHTML = "Yhteys toimii asuntoon asti, mikäli vika on Telian RGW:ssä tai takuunalaisessa reitittimessä pyydä palauttamaan laitteeseen tehdasasetukset. Jos sekään ei auta eikä " +
+                "laitetta ole vielä vaihdettu tämän vian takia tee mahdollinen laitteen vaihto prosessin mukaan. Jos asiakkaalla on muualta hankittu tai takuuton laite -> myy reititin! Pyydä muutoin asiakasta olemaan yhteydessä Helpsoniin. Jos tiketti tehdään niin 99€ pitää mainita!";
+            helppi();
             maksu();
             tiketti();
             sms_optio();
@@ -118,8 +119,8 @@
         }
         function f_311() {
             $("#toimintaohje").show();
-            document.getElementById('toimintaohje').innerHTML = "Viankorjaus ei ole Soneran vastuulla, yhteys toimii asuntoon asti. Pyydä asiakasta olemaan yhteydessä Helpsoniin. Ehdoton 99e maininta jos asiakas vaatii tikettiä";
-            helpson();
+            document.getElementById('toimintaohje').innerHTML = "Viankorjaus ei ole Telian vastuulla, yhteys toimii asuntoon asti. Pyydä asiakasta olemaan yhteydessä Helpsoniin. Ehdoton 99e maininta jos asiakas vaatii tikettiä";
+            helppi();
             $("#vakiopohjan_loppu").show();
             generoi();
         }
@@ -150,8 +151,8 @@
         }
         function f_331() {
             $("#toimintaohje").show();
-            document.getElementById('toimintaohje').innerHTML = "Viankorjaus ei ole Soneran vastuulla, yhteys toimii asuntoon asti. Pyydä asiakasta olemaan yhteydessä Helpsoniin. Ehdoton 99e maininta jos asiakas vaatii tikettiä";
-            helpson();
+            document.getElementById('toimintaohje').innerHTML = "Viankorjaus ei ole Telian vastuulla, yhteys toimii asuntoon asti. Pyydä asiakasta olemaan yhteydessä Helpsoniin. Ehdoton 99e maininta jos asiakas vaatii tikettiä";
+            helppi();
             $("#vakiopohjan_loppu").show();
             generoi();
 
@@ -193,5 +194,6 @@
         }
 
     </script>
-    </body>
-    </html>
+</form>
+</body>
+</html>

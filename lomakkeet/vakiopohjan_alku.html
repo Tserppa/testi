@@ -1,5 +1,10 @@
 <div id="vakiopohjan_alku">
-    <h2 onclick="expand();">Asiakastiedot</h2><span id="varoitus"></span>
+    <h2 onclick="expand(this);">Asiakastiedot</h2>
+    <div id="ikoni">
+        <svg height="15px" width="15px">
+            <use xlink:href='../layout/svg.svg#arrow-right'/>
+        </svg>
+    </div>
     <form method="post" id="asiakastiedot" action="#">
         <div id="alku_vasen">
             <INPUT name="liittymanumero" id="liittymanumero" type="text" oninput="generoi();" placeholder="Liittymänumero" value="<?php echo $_SESSION['liittyma'];?>">
@@ -7,13 +12,18 @@
             <INPUT name="userid" id="userid" type="text" oninput="generoi();" placeholder="Käyttäjätunnus" value="<?php echo $_SESSION['tunnus'];?>">
             <input name="stamp_pvm" type='text' id="datepicker" oninput="generoi();" value="<?php echo $_SESSION['alkoi']; ?>" placeholder="Milloin vika alkoi">
             <TEXTAREA name="vikakuvaus" id="vikakuvaus" oninput="generoi();" class="kapea" placeholder="Asiakkaan vikakuvaus"><?php echo $_SESSION['asiakaskuvaus'];?></TEXTAREA>
-            <input type="submit" value="Tallenna as.tiedot"/>
-            <input type="submit" onclick="reset_asiakas();" value="Tyhjennä as.tiedot"/><br>
-            <input type="reset" class="alusta" onclick='tyhjenna();' value="Aloita alusta">
+
         </div>
         <div id="alku_oikea">
             <TEXTAREA name="info" id="info" class="vikakuvaus" oninput="generoi();" placeholder="Agentin täydentämät lisätiedot"><?php echo $_SESSION['agenttikuvaus'];?></TEXTAREA>
+
         </div>
+
+        <a href="#" onclick="$('#asiakastiedot').submit();" class="button button--purchase button--small"><span class="button--text">Tallenna</span></a>
+        <a href="#" onclick="reset_asiakas();$('#asiakastiedot').submit();" class="button button--secondary button--small"><span class="button--text">Tyhjennä as.tiedot</span></a>
+        <a href="#" onclick="tyhjenna(); $('#asiakastiedot').submit();" class="button button--secondary button--small"><span class="button--text">Aloita alusta</span></a>
+        <a href="../sose.php" class="button button--secondary button--small"><span class="button--text">Palaa SoSeeseen</span></a>
+
     </form>
 </div>
 <br>

@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<!-- saved from url=(0072)http://sose.stadi.sonera.fi/sose/sose_beta/lomakkeet/data_hidastunut.php -->
+<!-- saved from url=(0072)http://sose.stadi.helppi.fi/sose/sose_beta/lomakkeet/data_hidastunut.php -->
 <HTML>
 <HEAD>
 <META content="IE=5.0000" http-equiv="X-UA-Compatible">

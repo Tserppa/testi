@@ -62,38 +62,38 @@
         }
 
         function f_12() {
-            huomautus("Yhteys toimii asuntoon asti, mikäli vika on Soneran RGW:ssä tai takuunalaisessa reitittimessä pyydä palauttamaan laitteeseen tehdasasetukset. WLAN-ongelmatapauksissa pyydä asiakasta olemaan yhteydessä Helpsoniin tai kokeilemaan yhteyttä verkkokaapelilla reitittimestä. Jos RGW on jo vaihdettu tämän vian takia kirjaa asiasta tiketti. Mahdollinen laitevaihto prosessin mukaan. Jos asiakkaalla on muualta hankittu tai takuuton laite -> myy uusi reititin!");
-            generointi("maksu;helpson;tiketti;sms_optio");
+            huomautus("Yhteys toimii asuntoon asti, mikäli vika on Telian RGW:ssä tai takuunalaisessa reitittimessä pyydä palauttamaan laitteeseen tehdasasetukset. WLAN-ongelmatapauksissa pyydä asiakasta olemaan yhteydessä Helpsoniin tai kokeilemaan yhteyttä verkkokaapelilla reitittimestä. Jos RGW on jo vaihdettu tämän vian takia kirjaa asiasta tiketti. Mahdollinen laitevaihto prosessin mukaan. Jos asiakkaalla on muualta hankittu tai takuuton laite -> myy uusi reititin!");
+            generointi("maksu;helppi;tiketti;sms_optio");
         }
 
         function f_132() {
             huomautus("Pyydä asiakasta lähtökohtaisesti olemaan yhteydessä Helpsoniin tai  testaamaan toisella tietokoneella ja verkkokaapeleilla. Tiketti voidaan kirjata mikäli asiakas sitä vaatii mutta 99€ pitää mainita!");
-            generointi("maksu;helpson;tiketti;sms_optio");
+            generointi("maksu;helppi;tiketti;sms_optio");
         }
 
         function f_1312() {
             huomautus("Vika jää hyvin todennäköisesti asiakkaan päätelaitteeseen tai sen ja reitittimen väliseen yhteyteen. Ei optiota eikä tikettiä, 99e maininta mikäli as. vaatii asentajakäyntiä");
-            generointi("helpson");
+            generointi("helppi");
         }
 
         function f_131112() {
-            huomautus("Vika on Wi-Fi:ssä tai  asiakkaan reitittimessä. Asiakas pitää ohjata Helpsonille. Mikäli vika on Soneran RGW:ssä tai takuunalaisessa reitittimessä pyydä palauttamaan laitteeseen tehdasasetukset. Jos RGW on jo vaihdettu tämän vian takia kirjaa asiasta tiketti. Mahdollinen laitevaihto prosessin mukaan. Jos asiakkaalla on muualta hankittu tai takuuton laite -> myy uusi reititin!");
-            generointi("helpson");
+            huomautus("Vika on Wi-Fi:ssä tai  asiakkaan reitittimessä. Asiakas pitää ohjata Helpsonille. Mikäli vika on Telian RGW:ssä tai takuunalaisessa reitittimessä pyydä palauttamaan laitteeseen tehdasasetukset. Jos RGW on jo vaihdettu tämän vian takia kirjaa asiasta tiketti. Mahdollinen laitevaihto prosessin mukaan. Jos asiakkaalla on muualta hankittu tai takuuton laite -> myy uusi reititin!");
+            generointi("helppi");
         }
         function f_131113() {
-            huomautus("Vika on todennäköisesti Wi-Fi:ssä, asunnon sisäverkossa, asiakkaan reitittimessä tai tietokoneessa mutta Soneran osuutta ei voida rajata pois ilman testausta suoraan kuitumuuntimesta. Asiakas pitää ohjata Helpsonille.Tiketti voidaan kirjata mikäli asiakas sitä vaatii mutta 99e pitää mainita. Tiketti pitää kirjata jos yhteys ei ole toiminut vielä kertaakaan tilatulla nopeudella");
-            generointi("maksu;helpson;tiketti");
+            huomautus("Vika on todennäköisesti Wi-Fi:ssä, asunnon sisäverkossa, asiakkaan reitittimessä tai tietokoneessa mutta Telian osuutta ei voida rajata pois ilman testausta suoraan kuitumuuntimesta. Asiakas pitää ohjata Helpsonille.Tiketti voidaan kirjata mikäli asiakas sitä vaatii mutta 99e pitää mainita. Tiketti pitää kirjata jos yhteys ei ole toiminut vielä kertaakaan tilatulla nopeudella");
+            generointi("maksu;helppi;tiketti");
         }
         function f_131121() {
-            huomautus("Vika on todennäköisesti asunnon sisäverkossa tai tietokoneessa mutta Soneran osuutta ei voida rajata pois ilman testausta suoraan kuitumuuntimesta. Ei optiota koska as. ei pysty/suostu testaamaan. Asiakas pitää ohjata Helpsonille.Tiketti voidaan kirjata mikäli asiakas sitä vaatii mutta 99e pitää mainita. Tiketti pitää kirjata jos yhteys ei ole toiminut vielä kertaakaan tilatulla nopeudella");
-            generointi("maksu;helpson;tiketti");
+            huomautus("Vika on todennäköisesti asunnon sisäverkossa tai tietokoneessa mutta Telian osuutta ei voida rajata pois ilman testausta suoraan kuitumuuntimesta. Ei optiota koska as. ei pysty/suostu testaamaan. Asiakas pitää ohjata Helpsonille.Tiketti voidaan kirjata mikäli asiakas sitä vaatii mutta 99e pitää mainita. Tiketti pitää kirjata jos yhteys ei ole toiminut vielä kertaakaan tilatulla nopeudella");
+            generointi("maksu;helppi;tiketti");
         }
         function f_131122() {
-            huomautus("Mikäli vika on Soneran RGW:ssä tai takuunalaisessa reitittimessä pyydä palauttamaan laitteeseen tehdasasetukset. Jos RGW on jo vaihdettu tämän vian takia kirjaa asiasta tiketti. Mahdollinen laitevaihto prosessin mukaan. Jos asiakkaalla on muualta hankittu tai takuuton laite -> myy uusi reititin!");
+            huomautus("Mikäli vika on Telian RGW:ssä tai takuunalaisessa reitittimessä pyydä palauttamaan laitteeseen tehdasasetukset. Jos RGW on jo vaihdettu tämän vian takia kirjaa asiasta tiketti. Mahdollinen laitevaihto prosessin mukaan. Jos asiakkaalla on muualta hankittu tai takuuton laite -> myy uusi reititin!");
             generointi("maksu;tiketti");
         }
         function f_131123() {
-            huomautus("Pyydä testaamaan ilman reititintä ja toisella verkkokaapelilla. Mikäli vika on Soneran RGW:ssä tai takuunalaisessa reitittimessä pyydä palauttamaan laitteeseen tehdasasetukset ja vastaamaan sms-optioon jos vika jatkuu resetin jälkeen");
+            huomautus("Pyydä testaamaan ilman reititintä ja toisella verkkokaapelilla. Mikäli vika on Telian RGW:ssä tai takuunalaisessa reitittimessä pyydä palauttamaan laitteeseen tehdasasetukset ja vastaamaan sms-optioon jos vika jatkuu resetin jälkeen");
             generointi("maksu;sms_optio");
         }
 

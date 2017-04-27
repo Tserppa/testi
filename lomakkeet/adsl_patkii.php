@@ -5,7 +5,6 @@
     <div id="ensimmainen" class="koe">
         <h3>Modeemin merkki ja malli</h3>
         <select id="merkki" name="merkki">
-            <option value=""></option>
             <option value="Zyxel">Zyxel</option>
             <option value="Telewell">Telewell</option>
             <option value="A-link">A-link</option>
@@ -35,8 +34,7 @@
     <div id="takuulaite" class="koe" hidden>
         <h3>Oma vai takuunalainen?</h3>
         <input type='radio' onclick='takuulaite_1();' id='takuulaite1id' name='takuulaite' value='Laite on asiakkaan oma'><label for='takuulaite1id'>Asiakkaan oma laite</label>
-        <input type='radio' onclick='takuulaite_2();' id='takuulaite2id' name='takuulaite' value='Laite on RGW / takuunalainen laite'><label for='takuulaite2id'>RGW / takuunalainen
-            laite</label>
+        <input type='radio' onclick='takuulaite_8();' id='takuulaite2id' name='takuulaite' value='Laite on RGW / takuunalainen laite'><label for='takuulaite2id'>RGW / takuunalainen laite</label>
     </div>
 
     <div id="toimintaohje2" class="ohje" hidden></div>
@@ -56,7 +54,9 @@
     </div>
 
     <div id="puhelinrasioita1" class="koe" hidden>
-        <div id="testidivi">Huom</br>Toisella modeemilla testaaminen on suositeltavaa, sillä yhteysongelma saattaa johtua vaurioituneesta modeemista
+        <div id="testidivi"><svg class="huomautus"  height="40px" width="40px" fill="black">
+                <use xlink:href='../layout/svg.svg#speech-bubble'/>
+            </svg>Toisella modeemilla testaaminen on suositeltavaa, sillä yhteysongelma saattaa johtua vaurioituneesta modeemista
         </div>
         <h3>Onko puhelinrasioita enemmän kuin yksi?</h3>
         <input type='radio' onclick='puhelinrasioita_1();' id='puhelinrasioita1id' name='puhelinrasioita1' value='Puhelinrasioita useampi, muttei testattu muissa'><label for='puhelinrasioita1id'>Kyllä, ei ole testattu muissa
@@ -70,7 +70,9 @@
     <div id="toimintaohje4" class="ohje" hidden></div>
 
     <div id="lankapuhelin_1" class="koe" hidden>
-        <div id="testidivi">Huom</br>Muita laitteita ovat esim. UPS, ylijännitesuoja, Fax, varashälytin</div>
+        <div id="testidivi"><svg class="huomautus"  height="40px" width="40px" fill="black">
+                <use xlink:href='../layout/svg.svg#speech-bubble'/>
+            </svg>Muita laitteita ovat esim. UPS, ylijännitesuoja, Fax, varashälytin</div>
         <h3>Onko lankapuhelinta tai muita laitteita kytkettynä puhelinverkkoon?</h3>
         <input type='radio' onclick='lankapuhelin1();' id='lankapuhelin1_id' name='lankapuhelin' value='Ei lankapuhelinta tai muita laitteita'><label for='lankapuhelin1_id'>Ei</label>
         <input type='radio' onclick='lankapuhelin1();' id='lankapuhelin2_id' name='lankapuhelin' value='Lankapuhelin kytkettynä verkkoon'><label for='lankapuhelin2_id'>On puhelin, varmistakaa että puhelimen rasiassa on suodatin.</label>
@@ -115,7 +117,9 @@
 
 
     <div id="puhelinrasioita_2" class="koe" hidden>
-        <div id="testidivi">Huom</br>Miksi? Kirjaa syy Agentin havainnot -kenttään</div>
+        <div id="testidivi"><svg class="huomautus"  height="40px" width="40px" fill="black">
+                <use xlink:href='../layout/svg.svg#speech-bubble'/>
+            </svg>Miksi? Kirjaa syy Agentin havainnot -kenttään</div>
         <h3>Onko puhelinrasioita enemmän kuin yksi?</h3>
         <input type='radio' onclick='puhelinrasioita2();' id='puhelinrasioita_2_1id' name='puhelinrasioita_2' value='Puhelinrasioita useampi, muttei testattu muissa'><label for='puhelinrasioita_2_1id'>Kyllä, ei ole testattu muissa
             rasioissa</label>
@@ -128,7 +132,9 @@
     <div id="toimintaohje8" class="ohje" hidden></div>
 
     <div id="lankapuhelin_2" class="koe" hidden>
-        <div id="testidivi">Huom</br>Muita laitteita ovat esim. UPS, ylijännitesuoja, Fax, varashälytin</div>
+        <div id="testidivi"><svg class="huomautus"  height="40px" width="40px" fill="black">
+                <use xlink:href='../layout/svg.svg#speech-bubble'/>
+            </svg>Muita laitteita ovat esim. UPS, ylijännitesuoja, Fax, varashälytin</div>
         <h3>Onko lankapuhelinta tai muita laitteita kytkettynä puhelinverkkoon?</h3>
         <input type='radio' onclick='lankapuhelin2_1();' id='lankapuhelin_2_1_id' name='lankapuhelin_2' value='Ei lankapuhelinta tai muita laitteita'><label for='lankapuhelin_2_1_id'>Ei</label>
         <input type='radio' onclick='lankapuhelin2_1();' id='lankapuhelin_2_2_id' name='lankapuhelin_2' value='Lankapuhelin kytkettynä verkkoon'><label for='lankapuhelin_2_2_id'>On puhelin, varmistakaa että puhelimen rasiassa on
@@ -193,33 +199,34 @@
 
         function lahiverkko_1() {
             huomautus("Pyydä asiakasta testaamaan yhteyttä toisella modeemilla ja tietokoneella.");
-            generointi("maksu;helpson;tiketti;sms_optio");
+            generointi("maksu;helppi;tiketti;sms_optio");
         }
 
         function lahiverkko_2() {
             $("#toimintaohje").show();
-            document.getElementById('toimintaohje').innerHTML = "Wifin pätkiminen voi johtua muun muassa seuraavista tekijöistä, mutta näitä korjaustoimenpiteitä / testejä ei pidä tehdä puhelun aikana:<ul><li>Modeemin sijainti</li><li>varmista ettei laitetta ole sijoitettu huoneistojakamon sisään / kaappiin</li><li>Pyydä testaamaan kaikki wlan-laitteet yksitellen siten että muut laitteet eivät ole yhteydessä (vanhat laitteet tai vaillinaiset ajurit eivät välttämättä tue uudempaa wlan-standardia tai suojausta)</li><li>Pyydä vaihtamaan modeemin hallintasivulta wlan-kanavaa, samassa rakennuksessa sijaitsevat muut wlan-tukiasemat voivat häiritä asiakkaan langatonta yhteyttä.</li><li>Helpson opastaa ja auttaa wifi -testauksien kanssa</li></ul>";
+            document.getElementById('toimintaohje').innerHTML = "Wifin pätkiminen voi johtua muun muassa seuraavista tekijöistä, mutta näitä korjaustoimenpiteitä / testejä ei pidä tehdä puhelun aikana:<ul><li>Modeemin " +
+                "sijainti</li><li>Varmista ettei laitetta ole sijoitettu huoneistojakamon sisään / kaappiin</li><li>Pyydä testaamaan kaikki wlan-laitteet yksitellen siten että muut laitteet eivät ole yhteydessä (vanhat laitteet tai vaillinaiset ajurit eivät välttämättä tue uudempaa wlan-standardia tai suojausta)</li><li>Pyydä vaihtamaan modeemin hallintasivulta wlan-kanavaa, samassa rakennuksessa sijaitsevat muut wlan-tukiasemat voivat häiritä asiakkaan langatonta yhteyttä.</li><li>Helpson opastaa ja auttaa wifi -testauksien kanssa</li></ul>";
             $("#takuulaite").show();
         }
 
         function lahiverkko_3() {
             huomautus("Miksi? Kirjaa syy Agentin havainnot -kenttään.Vika on hyvin todennäköisesti asiakkaan laiteympäristössä. Pyydä asiakasta olemaan yhteydessä Helpsoniin.SMS-option voi tarvittaessa kirjata jos se nähdään aiheelliseksi. Jos asiakas on lähiaikoina ollut yhteydessä samasta viasta, eikä tästä ole aiemmin kirjattu tikettiä, niin siinä tapauksessa voi avata tiketin. Tällöin aina maininta asentajakäyntimaksusta 99€.");
-            generointi("maksu;helpson;tiketti;sms_optio");
+            generointi("maksu;helppi;tiketti;sms_optio");
         }
 
         function lahiverkko_4() {
             huomautus("Pyydetään asiakasta testaamaan verkkokaapelilla suoraan modeemin lähiverkkoportista (kannattaa ohjeistaa testaamaan useammasta eri portista, jos mahdollista myös eri päätelaitteilla). Pyydä asiakasta olemaan yhteydessä Helpsoniin mikäli testaaminen tuntuu vaikealta.");
-            generointi("maksu;helpson;sms_optio");
+            generointi("maksu;helppi;sms_optio");
         }
 
         function takuulaite_1() {
             huomautus("Kyseessä on wlan ja/tai muu asiakaslaiteongelma, koska yhteys toimii pätkimättä modeemiin asti. WLAN-ongelmatapauksissa pyydä asiakasta olemaan yhteydessä Helpsoniin. Jos tiketti tehdään niin 99€ pitää mainita!");
-            generointi("helpson");
+            generointi("helppi");
         }
 
-        function takuulaite_2() {
+        function takuulaite_8() {
             huomautus("Pyydä asiakasta palauttamaan tehdasasetukset RGW:n, jos sitä ei ole vielä tehty");
-            generointi("helpson;tiketti;sms_optio");
+            generointi("helppi;tiketti;sms_optio");
         }
 
         function puhelinrasioita_1() {
@@ -247,7 +254,7 @@
         }
 
         function toinenjohto2() {
-            generointi("maksu;helpson;sms_optio");
+            generointi("maksu;helppi;sms_optio");
         }
 
         function wlan_2() {
@@ -302,27 +309,27 @@
 
         function kaikillalaitteilla_2() {
             huomautus("Vika jää hyvin todennäköisesti asiakkaan päätelaitteeseen tai sen ja reitittimen väliseen yhteyteen. Ei optiota eikä tikettiä, 99e maininta mikäli as. vaatii asentajakäyntiä");
-            generointi("helpson");
+            generointi("helppi");
         }
 
         function ilmanreititinta_1() {
             huomautus("Pyydä palauttamaan modeemiin tehdasasetukset.");
-            generointi("maksu;helpson;tiketti;sms_optio");
+            generointi("maksu;helppi;tiketti;sms_optio");
         }
 
         function ilmanreititinta_2() {
             $("#ilmanreititinta").show();
-            generointi("helpson");
+            generointi("helppi");
         }
 
         function ilmanreititinta_3() {
             huomautus("Jos vika ei vielä ratkennut, pyydä testaamaan suoraan modeemista verkkokaapelilla ja palauttamaan modeemiin tehdasasetukset. Pyydä vastaamaan sms-optioon jos vika jatkuu testausten jälkeen. Jos testauksia ei pysty suorittamaan kirjaa tiketti ja mainitse 99e");
-            generointi("maksu;helpson;tiketti;sms_optio");
+            generointi("maksu;helppi;tiketti;sms_optio");
         }
 
         function takuulaite_2_1() {
             huomautus("Kyseessä on wlan ja/tai muu asiakaslaiteongelma, koska yhteys toimii hidastelematta modeemiin asti. WLAN-ongelmatapauksissa pyydä asiakasta olemaan yhteydessä Helpsoniin. Jos tiketti tehdään niin 99€ pitää mainita! Jos asiakkaalla on muualta hankittu tai takuuton laite ja vika on rajattu siihen -> myy modeemi!");
-            generointi("maksu;helpson;tiketti;sms_optio");
+            generointi("maksu;helppi;tiketti;sms_optio");
         }
         function takuulaite_2_2() {
             $("#toimintaohje6").show();
@@ -338,11 +345,11 @@
         function tehdasasetukset22() {
             $("#toimintaohje7").show();
             document.getElementById('toimintaohje7').innerHTML = "Miksi? Kirjaa syy Agentin havainnot -kenttään";
-            generointi("maksu;helpson;tiketti");
+            generointi("maksu;helppi;tiketti");
         }
 
         function tehdasasetukset23() {
-            generointi("maksu;helpson;sms_optio");
+            generointi("maksu;helppi;sms_optio");
         }
 
         function tehdasasetukset24() {
