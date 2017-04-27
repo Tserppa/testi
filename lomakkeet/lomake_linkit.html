@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+ADSL: <a href="?lomake=adsl_eitoimi">Ei toimi</a> | <a href="?lomake=adsl_patkii">Pätkii</a> | GPON: <a href="?lomake=gpon_eitoimi">Ei toimi</a> | <a href="?lomake=gpon_patkii">Pätkii</a><br><br>
+<form method="post" id="asiakastiedot" action="#">
+
+    <TEXTAREA name="info" id="info" class="vikakuvaus" oninput="generoi();" placeholder="Agentin täydentämät lisätiedot"><?php echo $_SESSION['agenttikuvaus'];?></TEXTAREA>
+    <INPUT name="liittymanumero" id="liittymanumero" type="text" oninput="generoi();" placeholder="Liittymänumero" value="<?php echo $_SESSION['liittyma'];?>">
+    <INPUT name="yhtnro" id="yhtnro" type="text" oninput="generoi();" placeholder="Yhteyspuhelinnumero" value="<?php echo $_SESSION['puhnro'];?>">
+    <INPUT name="userid" id="userid" type="text" oninput="generoi();" placeholder="Käyttäjätunnus" value="<?php echo $_SESSION['tunnus'];?>">
+    <TEXTAREA name="vikakuvaus" id="vikakuvaus" oninput="generoi();" class="kapea" placeholder="Asiakkaan vikakuvaus"><?php echo $_SESSION['asiakaskuvaus'];?></TEXTAREA>
+
+    <input name="stamp_pvm" type='text' id="datepicker" oninput="generoi();" name='stamp_pvm' value='<?php echo $_SESSION[' alkoi '] ?>'
+    placeholder="Milloin vika alkoi"> <br>
+    <input type="submit" value="Tallenna"/>
+    <input type="button" onclick="reset_asiakas();" value="Tyhjennä"/>
+
+</form>
+<br>
+</body>
+</html>
